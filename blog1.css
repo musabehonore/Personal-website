@@ -1,0 +1,249 @@
+@font-face {
+  font-family: lexend deca;
+  src: url(LexendDeca-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: lexend deca;
+  transition: 0.5s;
+}
+
+body {
+  margin: 0%;
+}
+
+.container {
+  background-color: #111827;
+}
+
+.how5 {
+  display: flex;
+  justify-content: center;
+  background-color: #020617;
+  color: #EAB308;
+  padding: 1%;
+  margin: 0%;
+  font-size: 40px;
+}
+
+.intro-pic {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  background-color: #111827;
+}
+
+.intro-pic img {
+  width: 40%;
+  border-radius: 20px;
+}
+
+.firsttext,
+.secondtext,
+.thirdtext,
+.fourthtext,
+.fifthtext {
+  font-size: 24px;
+  padding-left: 10%;
+  padding-right: 5%;
+  color: white;
+  background-color: #111827;
+  margin: 0%;
+}
+
+.pic2,
+.pic3,
+.pic4,
+.pic5 {
+  display: flex;
+  background-color: #111827;
+  padding: 1%;
+  padding-left: 15%;
+
+}
+
+.pic2 img,
+.pic3 img,
+.pic4 img,
+.pic5 img {
+  width: 56%;
+  border-radius: 15px;
+}
+
+.like {
+  display: flex;
+  background-color: #111827;
+  padding-left: 5%;
+}
+
+.like img {
+  width: 30%;
+}
+
+.body3 {
+  display: flex;
+  justify-content: center;
+  background-color: #111827;
+  /* padding-left: 30%; */
+  padding-bottom: 2%;
+
+
+}
+
+.body3 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9CA3AF;
+  color: #F3F4F6;
+  width: 16%;
+  height: 50px;
+  margin: 0%;
+  border-radius: 20px;
+  font-size: 26px;
+}
+
+.ahaa {
+  width: 30%;
+  height: 20%;
+}
+
+.body4 {
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 90px;
+  padding-left: 12%;
+  padding-bottom: 8%;
+
+}
+
+.comment1 {
+  display: flex;
+  /* position: relative; */
+}
+
+.comment1 p {
+  background-color: #020617;
+  width: 78%;
+  border-radius: 16px;
+  padding: 1%;
+  padding-left: 5%;
+  position: relative;
+  margin-left: 10%;
+}
+
+.commentor {
+  font-size: 32px;
+  color: #FACC15;
+  
+}
+
+.commenttext {
+  font-size: 26px;
+  color: white;
+  
+}
+
+.comment1 img {
+  position: absolute;
+  width: 24%;
+  border-radius: 200px;
+  margin-left: -27%;
+  margin-top: -4%;
+}
+.comment2{
+  display: flex;
+  flex-direction: column;
+  background-color:#111827;
+  }
+  .comment2 div{
+     background-color: #020617;
+     margin: 6%;
+     border-radius: 10px;
+  }
+  .comment2 div p{
+    color:#9CA3AF;
+    margin: 5%;
+  }
+
+
+
+
+
+/* .dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dots img {
+  width: 4%;
+  margin-left: -20%;
+} */
+@media (max-width: 910px) {
+  .body3 p{
+     width: 24%;
+  }
+}
+@media (max-width: 600px) {
+  .how5 {
+    font-size: 28px;
+  }
+
+  .firsttext,
+  .secondtext,
+  .thirdtext,
+  .fourthtext,
+  .fifthtext {
+    font-size: 16px;
+  }
+  .commentor {
+    font-size: 26px;
+  }
+  .commenttext {
+    font-size: 18px;
+  }
+  .body3 p{
+    font-size: 18px;
+    width: 26%;
+  }
+  .body4{
+    gap: 10px;
+  }
+}
+@media (max-width: 420px) {
+  .how5 {
+    font-size: 17px;
+  }
+
+  .firsttext,
+  .secondtext,
+  .thirdtext,
+  .fourthtext,
+  .fifthtext {
+    font-size: 14px;
+  }
+  .commentor {
+    font-size: 18px;
+  }
+  .commenttext {
+    font-size: 13px;
+  }
+  .body3 p{
+    font-size: 16px;
+    width: 40%;
+  }
+  .pic2 img,
+.pic3 img,
+.pic4 img,
+.pic5 img {
+  width: 94%;
+  border-radius: 6px;
+}
+.intro-pic img {
+  width: 70%;
+  border-radius: 7px;
+}
+}
