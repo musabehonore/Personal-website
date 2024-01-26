@@ -1,0 +1,178 @@
+@font-face {
+  font-family: lexend deca;
+  src: url(LexendDeca-VariableFont_wght.ttf);
+}
+* {
+  font-family: lexend deca;
+  transition: 0.5s;
+  scroll-behavior: smooth;
+}
+body{
+  background-color:#020617;
+ 
+}
+.title1 {
+  display: flex;
+  justify-content: center;
+  /* padding: 2%; */
+  background-color: #020617;
+  position: relative;
+}
+.admin1{
+  position: absolute;
+  display: flex; 
+  margin-right: 66%;
+}
+.admin1 p{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.admin1 img{
+  width: 50px;
+  border-radius: 50px;  
+}
+.my2{
+  color: white;
+  font-weight: 700;
+  }
+  .dash1{
+    font-weight: 700;
+    color: #EAB308;
+  }
+
+.my1{
+  color: #F3F4F6;
+  font-size: 30px;
+  font-weight: 700;
+}
+.dash{
+  color: #EAB308;
+  font-size: 30px;
+  font-weight: 700;
+}
+.create{
+  display: flex;
+  justify-content: center;
+  background-color: #111827;
+  width: 460px;
+  border-radius: 26px;
+  /* margin-left: 35%; */
+  }
+.create2{
+  display: flex;
+  justify-content: center;
+  background-color: #9CA3AF;
+  margin: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 20px;
+}
+.create2 img{
+  width: 100%;
+  
+}
+.image1{
+  width: 80px;
+  margin-top: 2%;
+  }
+.create2 p{
+  font-size: 32px;
+  font-weight: 700;
+}
+.create2 p a{
+  text-decoration: none;
+  color: black;
+}
+.random {
+  display: flex;
+  justify-content: center;
+}
+.blogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10%;
+  gap: 20px;
+}
+
+.blog1 {
+  background-color: #111827;
+  border-radius: 30px;
+  width: 37%;
+}
+
+.blog2 {
+  background-color: #111827;
+  border-radius: 30px;
+  width: 37%;
+
+}
+
+.blog3 {
+  background-color: #111827;
+  border-radius: 30px;
+  width: 37%;
+}
+
+.blogpic1 {
+  width: 90%;
+  margin: 4%;
+  border-radius: 2%;
+}
+
+.how {
+  color: #EAB308;
+  font-size: 32px;
+  margin-left: 4%;
+}
+
+.things {
+  color: white;
+  font-size: 22px;
+  margin-left: 3%;
+}
+
+.stats1 {
+  display: flex;
+  justify-content: center;
+  color: #9CA3AF;
+  gap: 12%;
+  margin: 3%;
+}
+
+.learn1 {
+  display: flex;
+  margin: 8%;
+}
+
+.learn1 img {
+  height: 1%;
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+.learn1 p {
+  color: #EAB308;
+  font-size: 14px;
+  /* font-weight: 500; */
+}
+.learn1 p a{
+  text-decoration: none;
+  color: #EAB308;
+}
+.blog1container{
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.icons{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.icons img{
+  width: 100%;
+  border-radius: 10px;
+}

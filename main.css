@@ -85,6 +85,10 @@ body {
 .login1 {
   color: white;
 }
+.login1 a{
+  text-decoration: none;
+  color:#F3F4F6;
+}
 
 .menubox {
   display: flex;
@@ -401,7 +405,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 47%;
-  height: 100px;
+  height: 160px;
   gap: 68%;
 }
 
@@ -772,6 +776,11 @@ body {
   font-size: 14px;
   /* font-weight: 500; */
 }
+.learn1 p a{
+  text-decoration: none;
+  color: #EAB308;
+}
+
 
 @media(max-width: 1150px) {
   .stats1 {
