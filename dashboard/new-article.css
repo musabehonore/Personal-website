@@ -66,6 +66,7 @@ body {
 
 .inputs1 input {
   background-color: #545861;
+  color: white;
   border: none;
   margin-right: 10px;
   border-radius: 3px;
