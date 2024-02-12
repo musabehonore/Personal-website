@@ -78,6 +78,7 @@ body {
   width: 90%;
   margin: 4%;
   border-radius: 2%;
+  background-color:#545861;
 }
 
 .how {
@@ -165,4 +166,9 @@ body {
 .create2 p{
   font-size: 32px;
   font-weight: 700;
+}
+#text-one{
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
 }

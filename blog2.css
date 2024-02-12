@@ -224,7 +224,7 @@ body {
   border-radius: 6px;
 }
 }
-.comment2{
+/* .comment2{
   display: flex;
   flex-direction: column;
   background-color:#111827;
@@ -237,7 +237,7 @@ body {
   .comment2 div p{
     color:#9CA3AF;
     margin: 5%;
-  }
+  } */
 /* today commentsss... */
 .comment2 {
   display: flex;
@@ -245,7 +245,7 @@ body {
   background-color: #111827;
 }
 
-.comment2 div {
+.comment2 form{
   display: flex;
   flex-direction: column;
   background-color:#111827;
@@ -262,15 +262,62 @@ body {
   height: 30px;
   border-radius: 5px;
 }
-.yourcomment{
-  
+.yourcomment{  
   background-color: #020617;
   border: none;
   color: white;
   height: 60px;
   border-radius: 5px;
 }
-.comment2 div label{
+.comment2 form label{
   color: white;
   font-size: 18px;
+}
+.comment2 form button{
+  background-color: #EAB308;
+  width: 100px;
+  border: none;
+  margin: 25px;
+  border-radius: 3px;
+
+}
+
+/* validating.......... */
+
+input[name='names']:invalid {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+input[name='names']:valid {
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+#yourcomment:invalid {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+#yourcomment:valid {
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  margin-left: 0%;
+  font-size: 14px;
+}
+
+.nameBox{
+  display: flex;
+  flex-direction: column;
+}
+.commentBox{
+  display: flex;
+  flex-direction: column;
+}
+.comment2 form span{
+  margin-bottom: 8px;
 }
