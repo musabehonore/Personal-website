@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css">
-  <script src="hambuger.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="hambuger.js" defer></script>
+
   <title>HMUSABE</title>
+  <link rel="icon" type="image/png" href="m-icon.png">
 </head>
 
 <body>
@@ -33,35 +35,39 @@
           </div>
           <div class="login1">
             <a href="login.html">Login/Sign up</a>
-            
+
           </div>
 
         </div>
         <div class="navigation3">
-          <div class="navdivs">
+          <div class="navdivs2">
             <a href="#about-me">About</a>
           </div>
 
-          <div class="navdivs">
+          <div class="navdivs2">
             <a href="#myblogs">blogs</a>
 
           </div>
-          <div class="navdivs">
+          <div class="navdivs2">
             <a href="#portfolio">Portfolio</a>
           </div>
-          <div class="navdivs">
+          <div class="navdivs2">
             <a href="#contactme">Contact Us</a>
           </div>
-          <div class="login1">
+          <div class="login12">
             <a href="login.html">Login/Sign up</a>
-            
+
           </div>
 
         </div>
-        
+
         <div class="menubox">
-          <img class="menu" src="menu.png">
+          <img class="menu" id="img1" src="menu.png">
         </div>
+        <!-- <div class="menubox1">
+          <img class="menu1" src="menu1.png">
+        </div> -->
+
 
       </div>
     </div>
@@ -132,14 +138,6 @@
               <p class="explore2">Explore</p>
             </div>
           </div>
-          <!-- <div class="folio3">
-            <img class="portrectangle3" src="Rectangle 1026.png">
-            <div class="text3">
-              <p class="activities">Activities Management</p>
-              <p class="timetables">Timetables,...</p>
-              <p class="explore3">Explore</p>
-            </div>
-          </div> -->
         </div>
 
       </div>
@@ -183,6 +181,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <div id="contactme" class="contactme"> <!--Contact me section-->
       <p class="title3"> <span class="contact1">Contact</span> <span class="me2">Me</span> </p>
@@ -207,11 +206,18 @@
             </div>
 
           </div>
-          <div class="message1">
-            <div class="name1">Name</div>
-            <div class="message2">Message</div>
-            <button class="contactbutton">Contact Us</button>
-          </div>
+          <form class="message1" id="message1" novalidate>
+            <div class="name1" id="name1">
+              <input type="text" id="names" name="names" placeholder="Names" required minlength="4">
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div class="message2" id="message2">
+              <textarea placeholder="Message" id="message" name="message" cols="60" rows="8" minlength="8"
+                required></textarea>
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="contactbutton">Contact Us</button>
+          </form>
         </div>
         <div class="box2">
           <div class="socialmedia">
@@ -231,7 +237,7 @@
       </div>
     </div>
   </div>
-
+  <script src="validating.js"></script>
 </body>
 
 </html>

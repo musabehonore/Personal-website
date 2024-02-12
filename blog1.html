@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="blog1.css">
+  <script src="blog1.js" defer></script>
   <title>Web Templates</title>
 </head>
 
@@ -70,13 +71,20 @@
       <p>Comments</p>
     </div>
     <div class="comment2">
-      <div>
-        <label> Names</label>
-        <input class="names" type="text">
-        <label > Your Comment</label>
-        <input class="yourcomment" type="text">
+      <form>
+        <div class="nameBox" >
+          <label> Names</label>
+          <input class="names" type="text" id="names" name="names" required minlength="4" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <div class="commentBox" >
+          <label > Your Comment</label>
+          <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" required minlength="9" >
+          <span class="error" aria-live="polite"></span>
+        </div>
         
-      </div>
+        <button type="submit">Comment</button>        
+      </form>
       
     </div>
     

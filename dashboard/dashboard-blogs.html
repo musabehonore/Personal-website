@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dashboard-blogs.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.24.0/ui/trumbowyg.min.css" rel="stylesheet">
+
+  <script src="dashboard-blogs.js" defer></script>
+
   <title>Dashboard-blogs</title>
 </head>
 
@@ -18,16 +22,7 @@
       </div>
     </div>
     <div class="random">
-      <div class="create">
-        
-        <div class="create2">
-          <div class="image1">
-            <img src="ui_icons_outline-05-512_84647.png">
           </div>
-          <p> <a href="new-article.html">Create an article</a> </p>
-        </div>
-      </div>
-    </div>
     <div class="blogs4">
       <div class="blogs">
         <div class="blog1container">
@@ -68,6 +63,7 @@
             <img src="delete1.png">
           </div>
         </div>
+
         <div class="blog1container">
           <div class="blog3">
             <img class="blogpic1" src="brucee.png">
@@ -81,17 +77,53 @@
             </div>
           </div>
           <div class="icons">
-            <img src="edit1.png" >
+            <img src="edit1.png">
             <img src="update1.png">
             <img src="delete1.png">
           </div>
         </div>
-
+        <div id="blogs1" class="newblog"></div>
+        <!-- the new article ............ -->
+        <div class="blog1container">
+          <form id="blogForm" class="blogForm">
+            <div class="inputs1">
+              <input type="text" name="previewPic">
+              <label>Preview picture link</label>
+            </div>
+            <div class="inputs1">
+              <input type="text" name="title" required>
+              <label>Title</label>
+            </div>
+            <div class="inputs1">
+              <input type="text" name="summary" required>
+              <label>Summary</label>
+            </div>
+            <div class="inputs1">
+              <label>Body</label>
+            </div>
+            <textarea id="text-one" name="body" aria-required="true"></textarea>
+            <!-- </div> -->
+            <button id="createButton">Create</button>
+          </form>
+          <div id="blogs" class="blog1">
+            <img class="blogpic1" src="gallery_add_icon_240526.png">
+            <p id="titleP" class="how">Title</p>
+            <p id="summary" class="things">Summary</p>
+            <p id="body"></p>
+            <div class="learn1">
+              <p> Learn More </p>
+              <img src="Frame.png">
+            </div>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.24.0/trumbowyg.min.js"></script>
       </div>
     </div>
-    <divs>hdhd
+    <divs>
   </div>
   </div>
+
 </body>
 
 </html>

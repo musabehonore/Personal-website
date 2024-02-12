@@ -171,8 +171,201 @@ body{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: white;
 }
 .icons img{
   width: 100%;
   border-radius: 10px;
 }
+
+.title1 {
+  display: flex;
+  justify-content: center;
+}
+
+.my1 {
+  color: #F3F4F6;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.dash {
+  color: #EAB308;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.blog1container {
+  display: flex;
+  gap: 30px;
+  align-items: baseline;
+  margin-left: 70px;
+}
+
+.blogForm {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icons img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.blog1 {
+  background-color: #111827;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.inputs1 label {
+  color: white;
+  font-weight: 700;
+}
+
+.inputs1 {
+  display: flex;
+}
+
+.inputs1 input {
+  background-color: #545861;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  border-radius: 3px;
+  width: 70%;
+  height: 30px;
+}
+
+.blogpic1 {
+  width: 90%;
+  margin: 4%;
+  border-radius: 2%;
+  background-color:#545861;
+}
+
+.how {
+  color: #EAB308;
+  font-size: 32px;
+  margin-left: 8%;
+}
+
+.things {
+  color: white;
+  font-size: 22px;
+  margin-left: 8%;
+  margin-bottom: 90px;
+}
+
+.stats1 {
+  display: flex;
+  justify-content: center;
+  color: #9CA3AF;
+  gap: 12%;
+  margin: 3%;
+}
+
+.learn1 {
+  display: flex;
+  margin: 8%;
+}
+
+.learn1 img {
+  height: 1%;
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+.learn1 p {
+  color: #EAB308;
+  font-size: 14px;
+  /* font-weight: 500; */
+}
+
+.learn1 p a {
+  text-decoration: none;
+  color: #EAB308;
+}
+
+.button1 button{
+  color: white;
+  background-color: #957308;
+  border: none;
+  width: 230px;
+  height: 40px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+.create{
+  display: flex;
+  justify-content: center;
+  background-color: #111827;
+  width: 460px;
+  border-radius: 26px;
+  /* margin-left: 35%; */
+  }
+  .create3{
+    display: flex;
+    justify-content: center;
+  }
+.create2{
+  display: flex;
+  justify-content: center;
+  background-color: #9CA3AF;
+  margin: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 20px;
+  width: 180px;
+}
+.create2 img{
+  width: 100%;
+  
+}
+.image1{
+  width: 80px;
+  margin-top: 10%;
+  }
+.create2 p{
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.trumbowyg-editor{
+  color: white;
+}
+
+#text-one{
+  color: white;  
+  border: 2px solid white;
+  border-radius: 4px;
+  /* background-color: transparent; */
+}
+
+#blogs1 div{
+  color:#EAB308;
+  
+}
+#blogs1 p{
+  color: white;
+}
+#createButton{
+  
+  background-color:#EAB308;
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 30px;  
+  cursor: pointer;
+}
+#createButton:hover{
+  background-color:#f9dc87;
+  font-size: 18px;
+}
+#createButton:active{
+  background-color: #957308;
+}
+
