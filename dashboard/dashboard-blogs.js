@@ -90,11 +90,33 @@ function createBlog(title, image, content) {
     .then(response => response.json())
     .then(data => {
       console.log('Blog post created successfully:', data);
+      if (data.error === undefined) {
+        showConfirmationMessage2();
+      }else{
+        const confMessage = document.getElementById('confirmationMessage2');
+        const innerMessage = data.error;
+        confMessage.innerText = innerMessage;
+      }
+      showConfirmationMessage2();
     })
     .catch(error => {
       console.error('Error creating blog post:', error);
     });
 }
+function showConfirmationMessage2() {
+
+  const confirmationMessage = document.getElementById('confirmationMessage2');
+  confirmationMessage.style.display = 'flex';
+  setTimeout(() => {
+    confirmationMessage.style.display = 'none';
+    setTimeout(() => {
+      window.location.reload();
+    });
+  }, 4000);
+
+}
+
+
 
 document.getElementById('blogForm').addEventListener('submit', handleFormSubmit);
 
@@ -324,7 +346,7 @@ function showConfirmationMessage() {
     setTimeout(() => {
       window.location.reload();
     });
-  }, 3000);
+  }, 4000);
 
 }
 

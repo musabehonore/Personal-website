@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="login.css">
+  <script src="login.js" defer></script>
   <title>Login</title>
 </head>
 
@@ -18,20 +19,22 @@
       </div>
     </div>
     <div class="form-container">
-      <form>
-        <div class="nameBox">
+      <form id="signupForm">
+        <div class="nameBox" >
           <label> Username</label>
-          <input class="names" type="text" id="names" name="names" required minlength="3">
+          <input class="names" type="text" id="names" name="names" required minlength="3" >
           <span class="error" aria-live="polite"></span>
         </div>
-        <div class="nameBox">
-          <label> Password</label>
-          <input class="names" type="password" id="yourcomment" name="yourcomment" required minlength="4">
+        
+        <div class="nameBox" >
+          <label > Password</label>
+          <input class="names" type="password" id="password1" name="password" required minlength="4" >
           <span class="error" aria-live="polite"></span>
         </div>
-        <button type="submit">Login</button>
-        <!-- <a href="dashboard/dashboard.html"> <button type="submit">Login</button> </a> -->
+              
+        <button type="submit"> Login</button>        
       </form>
+      <div id="confirmationMessage" class="confirmation-message">Thanks for logging in!</div>
     </div>
     <div class="form-container">
       <p>Don't have an account? <a href="signup.html"> <span>Sign Up</span> </a>  </p>

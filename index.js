@@ -8,8 +8,8 @@ function loading() {
       console.log(blogs);
       if (blogs.length > 0) {
         blogs?.forEach(blog => {
-          blogsContainer.innerHTML += 
-          `
+          blogsContainer.innerHTML +=
+            `
           <div id="blog1">
           <div id="image-container">
             <img id="blogpic1" src="${blog.image}">
@@ -46,13 +46,13 @@ function autoSlide() {
   const blogWidth = blogsContainer.children[0].offsetWidth;
 
   const slideInterval = setInterval(() => {
-    currentPosition += 1; 
+    currentPosition += 1;
     blogsContainer.style.transform = `translateX(-${currentPosition * (blogWidth + 20)}px)`;
     if (currentPosition >= blogsContainer.children.length) {
       currentPosition = 0;
       blogsContainer.style.transform = `translateX(0)`;
     }
-  }, 3000); 
+  }, 3000);
 
   // blogsContainer.addEventListener('mouseenter', () => {
   //   clearInterval(slideInterval);
@@ -93,15 +93,21 @@ function postQuery(name, email, message) {
     method: 'POST',
     body: formData
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Query posted successfully:', data);
-    showConfirmationMessage();
-    document.getElementById('message1').reset();
-  })
-  .catch(error => {
-    console.error('Error posting query:', error);
-  });
+    .then(response => response.json())
+    .then(data => {
+      console.log('Query posted successfully:', data);
+      if (!data.error === undefined) {
+        const confMessage = document.getElementById('confirmationMessage');
+        const innerMessage = data.error;
+        confMessage.innerText = innerMessage;
+      }
+
+      showConfirmationMessage();
+      document.getElementById('message1').reset();
+    })
+    .catch(error => {
+      console.error('Error posting query:', error);
+    });
 }
 
 function showConfirmationMessage() {
@@ -109,7 +115,7 @@ function showConfirmationMessage() {
   confirmationMessage.style.display = 'flex';
   setTimeout(() => {
     confirmationMessage.style.display = 'none';
-  }, 4000); 
+  }, 4000);
 }
 
 document.getElementById('message1').addEventListener('submit', handleFormSubmit);

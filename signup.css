@@ -105,3 +105,24 @@ form button{
 form button:hover{
   transform: scale(1.2)
 }
+
+.confirmation-message {
+  background-color: rgb(1, 95, 1);
+  width: 250px;
+  height: 20px;
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  white-space: nowrap;
+  animation: scaleIn 0.3s ease-in-out;
+
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 10;
+
+}
