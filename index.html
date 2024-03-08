@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <script src="hambuger.js" defer></script>
+  <script src="index.js" defer></script>
 
   <title>HMUSABE</title>
   <link rel="icon" type="image/png" href="m-icon.png">
@@ -144,7 +145,23 @@
     </div>
     <div id="myblogs" class="myblogs"> <!--My Blogs section-->
       <p class="title2"> <span class="my3">My</span> <span class="blogs1">Blogs</span> </p>
-      <div class="blogs">
+    
+      <div id="bContainer1">
+        <div id="blogsContainer">        
+
+
+        </div>
+
+      </div>
+      
+
+
+
+
+
+
+
+      <!-- <div class="blogs">
         <div class="blog1">
           <img class="blogpic1" src="web template.png">
           <p class="how">How To Make Web Templates</p>
@@ -180,9 +197,9 @@
             <img src="Frame.png">
           </div>
         </div>
-      </div>
-
+      </div> -->
     </div>
+
     <div id="contactme" class="contactme"> <!--Contact me section-->
       <p class="title3"> <span class="contact1">Contact</span> <span class="me2">Me</span> </p>
       <div class="contactbox">
@@ -206,9 +223,14 @@
             </div>
 
           </div>
+
           <form class="message1" id="message1" novalidate>
             <div class="name1" id="name1">
               <input type="text" id="names" name="names" placeholder="Names" required minlength="4">
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div class="email1" id="email1">
+              <input type="email" id="email" name="email" placeholder="Email" >
               <span class="error" aria-live="polite"></span>
             </div>
             <div class="message2" id="message2">
@@ -216,9 +238,13 @@
                 required></textarea>
               <span class="error" aria-live="polite"></span>
             </div>
-            <button type="submit" class="contactbutton">Contact Us</button>
+            <button type="submit" class="contactbutton" >Contact Us</button>
           </form>
+          <div id="confirmationMessage" class="confirmation-message">Message sent successfully!</div>
+
+
         </div>
+        
         <div class="box2">
           <div class="socialmedia">
             <img src="Frame (6).png">
@@ -228,10 +254,9 @@
             <img src="Frame (3).png">
             <img src="Frame (4).png">
           </div>
-          <!-- <div class="admin">
-            <div class="admin1">Admin Dashboard</div>
-          </div> -->
-
+          <div class="rights">
+            &copy; 2024 All Rights Reserved
+          </div>
         </div>
 
       </div>

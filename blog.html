@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blog.css">
+  <script src="blog.js" defer></script>
+  <title>Blog</title>
+</head>
+
+<body>
+  <div class="container1">
+    <div class="admin1">
+      <a href="index.html#myblogs"><img
+          src="transparent-back-icon-business-seo-icon-previous-icon-5da1b0537ebaa1.3806857215708775235191.png"></a>
+    </div>
+    <p class="how5" id="title1">
+
+    </p>
+    <div class="intro-pic">
+      <img id="image1" >
+    </div>
+    <div class="body1" id="content1">
+       
+    </div>
+    <div class="body2">
+      <button id="likeButton" class="like">
+        <div id="likesCount" >0</div>
+        <img src="likeIcon.png" >
+      </button>
+    </div>
+    <div class="body3">
+      <p>Comments</p>
+    </div>
+
+    <div id="confirmationMessage" class="confirmation-message">Comment posted successfully!</div>
+
+
+    <div class="comment2">
+      <form id="commentForm">
+        <div class="nameBox" >
+          <!-- <label> Names</label> -->
+          <input class="names" type="text" id="names" name="names" placeholder="Names" required minlength="4" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <div class="nameBox" >
+          <!-- <label> Email</label> -->
+          <input class="names" type="email" id="email2" name="names" placeholder="Email" required minlength="4" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <div class="commentBox" >
+          <!-- <label > Your Comment</label> -->
+          <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" placeholder="Your comment" required minlength="9" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+        
+        <button type="submit">Comment</button>        
+      </form>
+      
+    </div>
+    
+    <div id="commentsContainer" class="body4">
+      <!-- <div class="comment1">
+        <p>
+          <img  src="Screenshot 2024-01-15 194356.png">
+          <span class="commentor">Pirlo <br/> </span> <br/> <span class="commenttext">That's A Great Documentation...</span> 
+          
+        </p>        
+      </div>
+      <div class="comment1">
+        <p>
+          <img  src="commentor2.jpg">
+          <span id="name" class="commentor">${comment.name}  <br/> </span> <br/> <span id="comment" class="commenttext">${comment.comment} </span> 
+          
+        </p>        
+      </div> -->
+      
+    </div>
+  </div>
+</body>
+
+</html>

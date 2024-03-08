@@ -91,7 +91,7 @@ form{
   border-radius: 6px;
 }
 form button{
-  width: 90px;
+  width: 110px;
   background-color: #EAB308;
   border: none;
   border-radius: 4px;
@@ -104,17 +104,4 @@ form button{
 }
 form button:hover{
   transform: scale(1.2)
-}
-.form-container p{
-  color: gray;
-}
-.form-container p span{
-  color: white;
-  cursor: pointer;
-}
-.form-container p span:hover{
-  color:#EAB308;
-}
-.form-container p a{
-  text-decoration: none;
 }

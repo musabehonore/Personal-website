@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.menubox');
   const nav = document.querySelector('.navigation3');
   hamburger.addEventListener('click', function () {
+    
     if (nav.style.display === 'block') {
       // If the menu is currently visible, hide it with fadeOutMenu animation
       if(img.getAttribute('src')==='menu.png'){
@@ -43,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+console.log('Hambuger js')
+
+// console.log(img.getAttribute('src'))
+
 // document.addEventListener('DOMContentLoaded', function () {
 //   const hamburger = document.querySelector('.menubox');
 //   const nav = document.querySelector('.navigation3');
@@ -74,4 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //     }, 50);
 //   });
 // });
-console.log(img.getAttribute('src'))
+
+
+

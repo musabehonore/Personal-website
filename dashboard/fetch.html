@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fetch.css">
+  <title>fetch testing</title>
+
+</head>
+
+<body>
+  <div>
+    <div class="title1">
+      <p class="title2"> <span class="my1">My</span> <span class="dash">Blogs</span> </p>
+      <div class="admin1">
+        <a href="dashboard.html"> <img
+            src="transparent-back-icon-business-seo-icon-previous-icon-5da1b0537ebaa1.3806857215708775235191.png"> </a>
+        <p> <span class="my2">My</span> <span class="dash1">Dashboard</span> </p>
+      </div>
+    </div>
+
+
+    <div id="blogsContainer">
+
+    </div>
+</body>
+<script>
+  function loading() {
+    fetch("http://localhost:7000/api/blogs").then((res) => {
+      res.json().then(data => {
+
+
+        const blogs = data.blogs
+        const lists = document.getElementById('blogsContainer')
+
+        console.log(blogs);
+        if (blogs.length > 0) {
+          blogs?.map(blog => {
+            blogsContainer.innerHTML +=
+              ` <div id='blogContainer' >
+                        
+                        <div id='imageDiv' >
+                        <img src="${blog.image}"> <div/>
+                        <h2 id="title1" >${blog.title}</h2>
+                        <div id='content1' >${blog.content}</div>
+                        <div id='date1' >Date: ${blog.date}</div>
+                        <div id='likes1' >Likes: ${blog.likes}</div>
+                        <div/>
+                    `
+          })
+        }
+        else {
+          const lists = document.getElementById('lists');
+          lists.innerHTML = ' <H1>No Blog found</H1> '
+        }
+      })
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+  loading()
+
+</script>
+
+</html>
+
+
+<!-- <div class="message10">
+  <div class="image2">
+    <img src="commentor2.jpg">
+  </div>
+  <div class="box">
+    <div class="text5">
+      <p id="name" class="commentor">${message.title}</p>
+      <p id="message" class="comment1">${message.message}</p>
+    </div>
+    <div class="like">
+      <p>Like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply</p>
+      <input type="text">
+    </div>
+  </div>
+  <div class="delete">
+    <img src="delete1.png">
+  </div>   
+</div> -->

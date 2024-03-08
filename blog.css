@@ -1,0 +1,417 @@
+@font-face {
+  font-family: lexend deca;
+  src: url(LexendDeca-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: lexend deca;
+  transition: 0.5s;
+}
+
+body {
+  margin: 0%;
+}
+
+.container {
+  background-color: #111827;
+}
+
+.how5 {
+  display: flex;
+  justify-content: center;
+  background-color: #020617;
+  color: #EAB308;
+  padding: 1%;
+  margin: 0%;
+  font-size: 40px;
+}
+
+.intro-pic {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  background-color: #111827;
+}
+
+.intro-pic img {
+  width: 40%;
+  border-radius: 20px;
+}
+
+.firsttext,
+.secondtext,
+.thirdtext,
+.fourthtext,
+.fifthtext {
+  font-size: 24px;
+  padding-left: 10%;
+  padding-right: 5%;
+  color: white;
+  background-color: #111827;
+  margin: 0%;
+}
+
+.pic2,
+.pic3,
+.pic4,
+.pic5 {
+  display: flex;
+  background-color: #111827;
+  padding: 1%;
+  padding-left: 15%;
+
+}
+
+.pic2 img,
+.pic3 img,
+.pic4 img,
+.pic5 img {
+  width: 56%;
+  border-radius: 15px;
+}
+
+.body2 {
+  background-color: #111827;
+}
+
+
+
+.body3 {
+  display: flex;
+  justify-content: center;
+  background-color: #111827;
+  /* padding-left: 30%; */
+  padding-bottom: 2%;
+  padding-top: 12px;
+
+
+}
+
+.body3 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9CA3AF;
+  color: #F3F4F6;
+  width: 16%;
+  height: 50px;
+  margin: 0%;
+  border-radius: 20px;
+  font-size: 26px;
+}
+
+.ahaa {
+  width: 30%;
+  height: 20%;
+}
+
+.body4 {
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  padding-left: 12%;
+  padding-bottom: 8%;
+
+}
+
+.comment1 {
+  display: flex;
+  /* position: relative; */
+}
+
+.comment1 p {
+  background-color: #020617;
+  width: 78%;
+  border-radius: 16px;
+  padding: 1%;
+  padding-left: 5%;
+  position: relative;
+  margin-left: 10%;
+}
+
+.commentor {
+  font-size: 28px;
+  color: #FACC15;
+  font-weight: bold;
+
+}
+
+.commenttext {
+  font-size: 22px;
+  color: white;
+
+}
+
+.comment1 img {
+  position: absolute;
+  width: 18%;
+  border-radius: 200px;
+  margin-left: -20%;
+  margin-top: -4%;
+}
+
+
+@media (max-width: 910px) {
+  .body3 p {
+    width: 24%;
+  }
+}
+
+@media (max-width: 600px) {
+  .how5 {
+    font-size: 28px;
+  }
+
+  .firsttext,
+  .secondtext,
+  .thirdtext,
+  .fourthtext,
+  .fifthtext {
+    font-size: 16px;
+  }
+
+  .commentor {
+    font-size: 26px;
+  }
+
+  .commenttext {
+    font-size: 18px;
+  }
+
+  .body3 p {
+    font-size: 18px;
+    width: 26%;
+  }
+
+  .body4 {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .how5 {
+    font-size: 17px;
+  }
+
+  .firsttext,
+  .secondtext,
+  .thirdtext,
+  .fourthtext,
+  .fifthtext {
+    font-size: 14px;
+  }
+
+  .commentor {
+    font-size: 18px;
+  }
+
+  .commenttext {
+    font-size: 13px;
+  }
+
+  .body3 p {
+    font-size: 16px;
+    width: 40%;
+  }
+
+  .pic2 img,
+  .pic3 img,
+  .pic4 img,
+  .pic5 img {
+    width: 94%;
+    border-radius: 6px;
+  }
+
+  .intro-pic img {
+    width: 70%;
+    border-radius: 7px;
+  }
+}
+
+/* today commentsss... */
+.comment2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+}
+
+.comment2 form {
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  margin-left: 18%;
+  margin-right: 6%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+}
+
+.names {
+  width: 30%;
+  background-color: #020617;
+  border: none;
+  color: white;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.yourcomment {
+  background-color: #020617;
+  border: none;
+  color: white;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.comment2 form label {
+  color: white;
+  font-size: 18px;
+}
+
+.comment2 form button {
+  background-color: #EAB308;
+  width: 100px;
+  border: none;
+  margin: 25px;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
+/* validating.......... */
+
+input[name='names']:invalid {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+input[name='names']:valid {
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+#yourcomment:invalid {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+#yourcomment:valid {
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  margin-left: 0%;
+  font-size: 14px;
+}
+
+.nameBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment2 form span {
+  margin-bottom: 8px;
+}
+
+#content1 {
+  font-size: 24px;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+  background-color: #111827;
+  margin: 0%;
+  text-align: justify;
+}
+
+.noComments {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.noComments2 {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin: 0px;
+  margin-top: -10px;
+}
+
+.admin1 {
+  position: absolute;
+  display: flex;
+  margin-right: 66%;
+}
+
+.admin1 p {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.admin1 img {
+  width: 50px;
+  border-radius: 50px;
+}
+
+.confirmation-message {
+  background-color: rgb(1, 95, 1);
+  width: 250px;
+  height: 20px;
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  white-space: nowrap;
+  animation: scaleIn 0.3s ease-in-out;
+
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 10;
+
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like {
+  display: flex;
+  background-color: #111827;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  margin-left: 170px;
+}
+
+.like img {
+  width: 100%;
+}
+
+.like:active {
+  transform: rotate(45deg);
+}
+
+#likesCount {
+  color: rgb(79, 190, 79);
+  position: absolute;
+  margin-top: 36px;
+  margin-left: 25px;
+}
