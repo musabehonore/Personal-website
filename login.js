@@ -34,9 +34,9 @@ function login(username, password) {
 
         setTimeout(() => {
           if (Role === 'admin') {
-            window.location.href = '/dashboard/dashboard.html';
+            window.location.href = './dashboard/dashboard.html';
           } else if (Role === 'user') {
-            window.location.href = '/index.html';
+            window.location.href = 'index.html'; 
           } else {
             console.error('Unknown user role:', Role);
           }

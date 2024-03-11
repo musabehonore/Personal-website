@@ -141,8 +141,10 @@ document.getElementById('logout12').addEventListener('click', function() {
 document.getElementById('logout1').addEventListener('click', function() {
   localStorage.removeItem('Token');
   localStorage.removeItem('isLoggedIn');
-  window.location.reload();
-  showConfirmationMessage3()
+  showConfirmationMessage3();
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
 });
 
 const isLoggedIn = localStorage.getItem('isLoggedIn');
