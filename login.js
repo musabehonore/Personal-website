@@ -4,40 +4,54 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   const username = document.getElementById('names').value;
-  const email = document.getElementById('email').value;
   const password = document.getElementById('password1').value;
 
-  signUp(username, email, password);
+  login(username, password);
 }
 
-function signUp(username, email, password) {
+function login(username, password) {
   const formData = new FormData();
   formData.append('username', username);
-  formData.append('email', email);
   formData.append('password', password);
 
-  fetch('http://localhost:7000/api/login', {
+  fetch('https://personal-web-backend-318j.onrender.com/api/login', {
     method: 'POST',
     body: formData
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Login successful:', data.message);
-    
-  if (data.message === 'Login successful!!') {
-    showConfirmationMessage();
-  }else{
-    const confMessage = document.getElementById('confirmationMessage');
-    const innerMessage = data.message;
-    confMessage.innerText = innerMessage;
-    showConfirmationMessage();
-  }
-    
-    // document.getElementById('password1').reset();
-  })
-  .catch(error => {
-    console.error('Error signing up:', error);
-  });
+    .then(response => response.json())
+    .then(data => {
+      console.log('Login successful:', data);
+
+      if (data.message === 'Login successful!!') {
+
+        localStorage.setItem('isLoggedIn', 'true');
+
+        const token = data.token;
+        localStorage.setItem('Token', token);
+        const Role = getTokenRole(token);
+
+        showConfirmationMessage();
+
+        setTimeout(() => {
+          if (Role === 'admin') {
+            window.location.href = '/dashboard/dashboard.html';
+          } else if (Role === 'user') {
+            window.location.href = '/index.html';
+          } else {
+            console.error('Unknown user role:', Role);
+          }
+        }, 3000);
+      } else {
+        const confMessage = document.getElementById('confirmationMessage');
+        const innerMessage = data.message;
+        confMessage.innerText = innerMessage;
+        showConfirmationMessage();
+      }
+
+    })
+    .catch(error => {
+      console.error('Error signing up:', error);
+    });
 }
 
 function showConfirmationMessage() {
@@ -45,7 +59,15 @@ function showConfirmationMessage() {
   confirmationMessage.style.display = 'flex';
   setTimeout(() => {
     confirmationMessage.style.display = 'none';
-  }, 4000); 
+  }, 4000);
+}
+function getTokenRole(token) {
+  const decodedToken = atob(token.split('.')[1]);
+  const parsedToken = JSON.parse(decodedToken);
+
+  return parsedToken.role || 'unknown';
 }
 
 document.getElementById('loginForm').addEventListener('submit', handleFormSubmit);
+
+

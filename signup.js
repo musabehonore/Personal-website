@@ -16,28 +16,34 @@ function signUp(username, email, password) {
   formData.append('email', email);
   formData.append('password', password);
 
-  fetch('http://localhost:7000/api/signup', {
+  fetch('https://personal-web-backend-318j.onrender.com/api/signup', {
     method: 'POST',
     body: formData
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Sign Up successful:', data.message);
-    
-  if (data.message === 'User created successfully') {
-    showConfirmationMessage();
-  }else{
-    const confMessage = document.getElementById('confirmationMessage');
-    const innerMessage = data.message;
-    confMessage.innerText = innerMessage;
-    showConfirmationMessage();
-  }
-    
-    // document.getElementById('password1').reset();
-  })
-  .catch(error => {
-    console.error('Error signing up:', error);
-  });
+    .then(response => response.json())
+    .then(data => {
+      console.log('Sign Up successful:', data.message);
+
+      if (data.message === 'User created successfully') {
+
+        localStorage.setItem('isLoggedIn', 'true');
+
+        const token = data.token;
+        localStorage.setItem('Token', token);
+        showConfirmationMessage();
+        setTimeout(() => {
+          window.location.href = '/index.html';
+        }, 3000)
+      } else {
+        const confMessage = document.getElementById('confirmationMessage');
+        const innerMessage = data.message;
+        confMessage.innerText = innerMessage;
+        showConfirmationMessage();
+      }
+    })
+    .catch(error => {
+      console.error('Error signing up:', error);
+    });
 }
 
 function showConfirmationMessage() {
@@ -45,7 +51,7 @@ function showConfirmationMessage() {
   confirmationMessage.style.display = 'flex';
   setTimeout(() => {
     confirmationMessage.style.display = 'none';
-  }, 4000); 
+  }, 4000);
 }
 
 document.getElementById('signupForm').addEventListener('submit', handleFormSubmit);

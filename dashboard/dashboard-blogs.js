@@ -13,7 +13,8 @@ ClassicEditor
 
 //today's blogs.....
 function loading() {
-  fetch("http://localhost:7000/api/blogs").then((res) => {
+
+  fetch("https://personal-web-backend-318j.onrender.com/api/blogs").then((res) => {
     res.json().then(data => {
 
       const blogs = data.blogs
@@ -82,17 +83,33 @@ function createBlog(title, image, content) {
   formData.append('image', image);
   formData.append('content', content);
 
+  const Token = localStorage.getItem('Token');
 
-  fetch('http://localhost:7000/api/blogs', {
+  fetch('https://personal-web-backend-318j.onrender.com/api/blogs', {
     method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${Token}`,
+    },
     body: formData
   })
     .then(response => response.json())
     .then(data => {
       console.log('Blog post created successfully:', data);
+
+      if (data.message === 'You are unauthenticated' || 'Unauthorized access') {
+        const confMessage = document.getElementById('confirmationMessage2');
+        const innerMessage = 'Unauthorized';
+        confMessage.innerText = innerMessage;
+        showConfirmationMessage2();
+        setTimeout(() => {
+          window.location.href = '../login.html';
+        }, 2900);
+        return
+      }
+
       if (data.error === undefined) {
         showConfirmationMessage2();
-      }else{
+      } else {
         const confMessage = document.getElementById('confirmationMessage2');
         const innerMessage = data.error;
         confMessage.innerText = innerMessage;
@@ -109,9 +126,9 @@ function showConfirmationMessage2() {
   confirmationMessage.style.display = 'flex';
   setTimeout(() => {
     confirmationMessage.style.display = 'none';
-    setTimeout(() => {
-      window.location.reload();
-    });
+    // setTimeout(() => {
+    //   window.location.reload();
+    // });
   }, 4000);
 
 }
@@ -189,47 +206,6 @@ document.getElementById('blogForm').addEventListener('submit', handleFormSubmit)
 // // Add event listener to the blog form submit event
 // document.getElementById('blogForm').addEventListener('submit', handleFormSubmit);
 
-
-// function deleteBlog(blogId) {
-//   fetch(`http://localhost:7000/api/blogs/${blogId}`, {
-//     method: 'DELETE'
-//   })
-//   .then(response => {
-//     if (response.ok) {
-//       console.log('Blog post deleted successfully');
-//       // Optionally, you can perform additional actions after deleting the blog post, such as updating the UI
-//     } else {
-//       throw new Error('Failed to delete blog post');
-//     }
-//   })
-
-//   .catch(error => {
-//     console.error('Error deleting blog post:', error);
-//   });
-// }
-
-// // Example usage:
-// // Assuming you have a button with id="deleteButton" and a data attribute data-blog-id containing the ID of the blog post to be deleted
-// // Attach click event listener to the delete button
-// document.getElementById('delete1').addEventListener('click', function(event) {
-//   // Prevent the default behavior of the delete button (e.g., form submission)
-//   event.preventDefault();
-
-//   // Get the parent element of the delete button, which should be the blog element
-//   const blogElement = this.parentElement;
-
-
-//   // Extract the blog id from the data-blog-id attribute of the blog element
-//   const blogId = blogElement.getAttribute('data-blog-id');
-//   // Confirm with the user if they want to delete the blog post
-//   if (confirm('Are you sure you want to delete this blog post?')) {
-//     // Call the deleteBlog function with the extracted blog id
-//     deleteBlog(blogId);
-//   }
-// });
-
-console.log('1')
-
 // function handleEditButtonClick(blogId) {
 //   fetch('http://localhost:7000/api/blogs/65e307dceccd2e7927942509').then((res) => {
 //     res.json().then(data => {
@@ -272,34 +248,10 @@ console.log('1')
 //   });
 // });
 
-console.log('2')
-// function deleteBlog(blogId) {
-//   fetch(`http://localhost:7000/api/blogs/${blogId}`, {
-//     method: 'DELETE'
-//   })
-//   .then(response => {
-//     if (response.ok) {
-//       console.log('Blog post deleted successfully');
-//       // Optionally, you can perform additional actions after deleting the blog post, such as updating the UI
-//     } else {
-//       throw new Error('Failed to delete blog post');
-//     }
-//   })
-//   .catch(error => {
-//     console.error('Error deleting blog post:', error);
-//   });
-// }
-
-// // Event listener for the delete button
-// document.getElementById('delete1').addEventListener('click', () => {
-//   const blogId = `${blog._id}` ; // Add the correct blog ID here
-//   const confirmDelete = confirm('Are you sure you want to delete this blog post?');
-//   if (confirmDelete) {
-//     deleteBlog(blogId);
-//   }
-// });
+//deleting a blog
 
 function deleteBlog(blogId) {
+  const Token = localStorage.getItem('Token');
 
   const overlay = document.getElementById('overlay');
   overlay.style.display = 'block';
@@ -311,10 +263,23 @@ function deleteBlog(blogId) {
   const cancelDeleteButton = document.getElementById('cancelDelete');
 
   confirmDeleteButton.addEventListener('click', () => {
-    fetch(`http://localhost:7000/api/blogs/${blogId}`, {
-      method: 'DELETE'
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${Token}`,
+      }
     })
       .then(response => {
+        if (response.status === 401) {
+          const confMessage = document.getElementById('confirmationMessage');
+          const innerMessage = 'Unauthorized';
+          confMessage.innerText = innerMessage;
+          showConfirmationMessage();
+          setTimeout(() => {
+            window.location.href = '../login.html';
+          }, 2900);
+          return
+        }
         if (response.ok) {
           console.log('Blog deleted successfully');
 

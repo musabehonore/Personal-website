@@ -193,7 +193,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color:#212C42;
+  background-color: #212C42;
   padding: 20px;
   /* border: 1px solid white; */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -203,11 +203,13 @@ body {
   animation: scaleIn 0.3s ease-in-out;
 
 }
-.confirmButtons{
-display: flex;
-justify-content: space-between;
+
+.confirmButtons {
+  display: flex;
+  justify-content: space-between;
 }
-.custom-dialog button{
+
+.custom-dialog button {
   background-color: #EAB308;
   cursor: pointer;
   border: none;
@@ -227,3 +229,22 @@ justify-content: space-between;
   z-index: 998;
 
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:#212C42;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color:#81868f;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+

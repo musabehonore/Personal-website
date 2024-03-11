@@ -126,3 +126,19 @@ form button:hover{
   z-index: 10;
 
 }
+::-webkit-scrollbar {
+  display: none;
+}
+.form-container p{
+  color: gray;
+}
+.form-container p span{
+  color: white;
+  cursor: pointer;
+}
+.form-container p span:hover{
+  color:#EAB308;
+}
+.form-container p a{
+  text-decoration: none;
+}

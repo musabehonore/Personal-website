@@ -1,17 +1,17 @@
 const form = document.querySelector("form");
-const names = document.getElementById("names");
+// const names = document.getElementById("names");
 const message = document.getElementById("yourcomment");
-const namesError = document.querySelector("#names + span.error");
+// const namesError = document.querySelector("#names + span.error");
 const messageError = document.querySelector("#yourcomment + span.error");
 
-names.addEventListener("input", () => {
-  if (names.validity.valid) {
-    namesError.textContent = "";
-    namesError.className = "error";
-  } else {
-    showNameError();
-  }
-});
+// names.addEventListener("input", () => {
+//   if (names.validity.valid) {
+//     namesError.textContent = "";
+//     namesError.className = "error";
+//   } else {
+//     showNameError();
+//   }
+// });
 
 message.addEventListener("input", () => {
   if (message.validity.valid) {
@@ -23,20 +23,20 @@ message.addEventListener("input", () => {
 });
 
 form.addEventListener("submit", (event) => {
-  if (!names.validity.valid || !message.validity.valid) {
+  if (!message.validity.valid) {
     showNameError();
     showMessageError();
     event.preventDefault();
   }
 });
 
-function showNameError() {
-  if (names.validity.valueMissing) {
-    namesError.textContent = "Your name is needed";
-  } else if (names.validity.tooShort) {
-    namesError.textContent = `A name should be at least ${names.minLength} characters... you entered ${names.value.length}`;
-  }
-}
+// function showNameError() {
+//   if (names.validity.valueMissing) {
+//     namesError.textContent = "Your name is needed";
+//   } else if (names.validity.tooShort) {
+//     namesError.textContent = `A name should be at least ${names.minLength} characters... you entered ${names.value.length}`;
+//   }
+// }
 
 function showMessageError() {
   if (message.validity.valueMissing) {
@@ -45,14 +45,16 @@ function showMessageError() {
     messageError.textContent = `A comment should be at least ${message.minLength} characters... you entered ${message.value.length}`;
   }
 }
+
 //fetching blog..
 document.addEventListener('DOMContentLoaded', function () {
   const urlParams = new URLSearchParams(window.location.search);
   const blogId = urlParams.get('id');
+  // const blogId = '65e1e6d16d14c490fa496f6c';
   console.log(blogId)
 
   if (blogId) {
-    fetch(`http://localhost:7000/api/blogs/${blogId}`)
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}`)
 
       .then((res) => {
         if (!res.ok) {
@@ -76,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   // comments loading
   if (blogId) {
-    fetch(`http://localhost:7000/api/blogs/${blogId}/comments`).then((res) => {
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`).then((res) => {
       res.json().then(data => {
 
 
@@ -91,12 +93,23 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="comment1">
             <p>
               <img  src="commentor2.jpg">
-              <span id="name" class="commentor">${comment.name}  <br/> </span> <br/> <span id="comment" class="commenttext">${comment.comment} </span> 
+              <span id="name" class="commentor">${comment.name}  <span id="commentDate" class="commentDate"> ${comment.date}</span>  <br/> </span> <br/> <span id="comment" class="commenttext">${comment.comment} </span> 
               
             </p>        
           </div>
             `
           });
+
+          const commentDateElements = document.getElementsByClassName('commentDate');
+
+          for (let i = 0; i < commentDateElements.length; i++) {
+            const commentDate = commentDateElements[i];
+            
+            const commentDateInner = commentDate.innerHTML;
+            const updatedDate = commentDateInner.substr(0, 17);
+            commentDate.innerHTML = updatedDate;
+          }
+
           // autoSlide();
         }
         else {
@@ -111,18 +124,54 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+
   //post a comment
 
+  document.getElementById('commentForm').onsubmit = function () {
+    return checkToken();
+  };
+
+  function checkToken() {
+    const token = localStorage.getItem('Token');
+
+    if (!token) {
+      console.log('No token found! Please log in.');
+      event.preventDefault();
+      const confMessage = document.getElementById('confirmationMessage');
+      const innerMessage = 'Unauthenticated!  please first Login';
+      confMessage.innerText = innerMessage;
+      showConfirmationMessage();
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 3900);
+      return false;
+    }
+
+    return true;
+  }
+
+  const token = localStorage.getItem('Token');
+  function getTokenRole(token) {
+    const decodedToken = atob(token.split('.')[1]);
+    const parsedToken = JSON.parse(decodedToken);
+
+    return parsedToken;
+  }
+  const User = getTokenRole(token);
+  const name1 = User.username;
+  const email1 = User.email;
+  console.log(User)
 
   function handleFormSubmit(event) {
     event.preventDefault();
 
-    const name = document.getElementById('names').value;
-    const email = document.getElementById('email2').value;
+    const name = name1;
+    const email = email1;
     const yourcomment = document.getElementById('yourcomment').value;
 
     postComment(name, email, yourcomment);
   }
+
 
   function postComment(name, email, yourcomment) {
     const formData = new FormData();
@@ -130,13 +179,18 @@ document.addEventListener('DOMContentLoaded', function () {
     formData.append('email', email);
     formData.append('comment', yourcomment);
 
-    fetch(`http://localhost:7000/api/blogs/${blogId}/comments`, {
+    const Token = localStorage.getItem('Token');
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`, {
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${Token}`,
+      },
       body: formData
     })
       .then(response => response.json())
       .then(data => {
         console.log('Comment posted successfully:', data);
+
         showConfirmationMessage();
         // document.getElementById('yourcomment').reset();
       })
@@ -150,15 +204,18 @@ document.addEventListener('DOMContentLoaded', function () {
     confirmationMessage.style.display = 'flex';
     setTimeout(() => {
       confirmationMessage.style.display = 'none';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     }, 4000);
   }
-
   document.getElementById('commentForm').addEventListener('submit', handleFormSubmit);
+
 
   //like....
 
   if (blogId) {
-    fetch(`http://localhost:7000/api/blogs/${blogId}/likes`).then((res) => {
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/likes`).then((res) => {
       res.json().then(data => {
 
 
@@ -179,8 +236,8 @@ document.addEventListener('DOMContentLoaded', function () {
   //add a like
   const likeButton = document.getElementById('likeButton');
   likeButton.addEventListener('click', function () {
-    
-    fetch(`http://localhost:7000/api/blogs/${blogId}/like`, {
+
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/like`, {
       method: 'POST'
     })
       .then(response => response.json())
@@ -193,8 +250,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Error adding a like:', error);
       });
   });
-
-
 
 });
 

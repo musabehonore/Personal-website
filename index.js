@@ -1,5 +1,7 @@
+
+//fetch the blogs to the blog section
 function loading() {
-  fetch("http://localhost:7000/api/blogs/").then((res) => {
+  fetch("https://personal-web-backend-318j.onrender.com/api/blogs/").then((res) => {
     res.json().then(data => {
 
       const blogs = data.blogs
@@ -89,7 +91,7 @@ function postQuery(name, email, message) {
   formData.append('email', email);
   formData.append('message', message);
 
-  fetch('http://localhost:7000/api/queries', {
+  fetch('https://personal-web-backend-318j.onrender.com/api/queries', {
     method: 'POST',
     body: formData
   })
@@ -117,7 +119,42 @@ function showConfirmationMessage() {
     confirmationMessage.style.display = 'none';
   }, 4000);
 }
+function showConfirmationMessage3() {
+  const confirmationMessage = document.getElementById('confirmationMessage3');
+  confirmationMessage.style.display = 'flex';
+  setTimeout(() => {
+    confirmationMessage.style.display = 'none';
+  }, 3000);
+}
 
 document.getElementById('message1').addEventListener('submit', handleFormSubmit);
 
+//logout...... logging out.....
+document.getElementById('logout12').addEventListener('click', function() {
+  localStorage.removeItem('Token');
+  localStorage.removeItem('isLoggedIn');
+  showConfirmationMessage3();
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
+});
+document.getElementById('logout1').addEventListener('click', function() {
+  localStorage.removeItem('Token');
+  localStorage.removeItem('isLoggedIn');
+  window.location.reload();
+  showConfirmationMessage3()
+});
 
+const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+if (isLoggedIn === 'true') {
+  const loginButton = document.getElementById('login1');
+  const loginButton2 = document.getElementById('login12');
+  const logoutButton = document.getElementById('logout1');
+  const logoutButton2 = document.getElementById('logout12');
+   
+  loginButton.style.display = 'none';
+  loginButton2.style.display = 'none';
+  logoutButton.style.display = 'block';
+  logoutButton2.style.display = 'block';
+}

@@ -11,61 +11,69 @@
 
 <body>
   <div class="container1">
+    <div class="admin1">
+      <a href="index.html#myblogs"><img
+          src="transparent-back-icon-business-seo-icon-previous-icon-5da1b0537ebaa1.3806857215708775235191.png"></a>
+    </div>
     <p class="how5" id="title1">
 
     </p>
     <div class="intro-pic">
-      <img id="image1" >
+      <img id="image1">
     </div>
     <div class="body1" id="content1">
-       
+
     </div>
     <div class="body2">
-      <div class="like">
-        <img src="—Pngtree—like like icon_5461800.png" >
-      </div>
+      <button id="likeButton" class="like">
+        <div id="likesCount">0</div>
+        <img src="likeIcon.png">
+      </button>
     </div>
     <div class="body3">
       <p>Comments</p>
     </div>
-    <div class="comment2">
-      <form>
-        <div class="nameBox" >
-          <label> Names</label>
-          <input class="names" type="text" id="names" name="names" required minlength="4" >
-          <span class="error" aria-live="polite"></span>
-        </div>
-        <div class="commentBox" >
-          <label > Your Comment</label>
-          <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" required minlength="9" >
-          <span class="error" aria-live="polite"></span>
-        </div>
-        
-        <button type="submit">Comment</button>        
-      </form>
-      
+
+    <div id="confirmationMessage" class="confirmation-message">Comment posted successfully!</div>
+    <div id="confirmationMessage2" class="confirmation-message">Comment hidden successfully!</div>
+    <div id="customDialog" class="custom-dialog">
+      <p>Are you sure you want to delete this Blog ??</p>
+      <div class="confirmButtons">
+        <button id="confirmDelete">Yes</button>
+        <button id="cancelDelete">No</button>
+      </div>
     </div>
-    
-    <div class="body4">
-      <div class="comment1">
-        <p>
-          <img  src="Screenshot 2024-01-15 194356.png">
-          <span class="commentor">Pirlo <br/> </span> <br/> <span class="commenttext">That's A Great Documentation...</span> 
-          
-        </p>        
-      </div>
-      <div class="comment1">
-        <p>
-          <img  src="commentor2.jpg">
-          <span class="commentor">Cp Kabera <br/> </span> <br/> <span class="commenttext">Make Sure U Aren't Violating Anything Bro</span> 
-          
-        </p>        
-      </div>
-      <!-- <div class="dots">
-        <img src="dots.png" >
-      </div> -->
+    <div class="overlay" id="overlay"></div>
+
+
+
+    <div class="comment2">
+      <form id="commentForm" onsubmit="checkToken()">
+        <!-- <div class="nameBox" >
+          <input class="names" type="text" id="names" name="names" placeholder="Names"  minlength="4" >
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <div class="nameBox" >
+          <input class="names" type="email" id="email2" name="names" placeholder="Email"  minlength="4" >
+          <span class="error" aria-live="polite"></span>
+        </div> -->
+        <div class="commentBox">
+          <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" placeholder="Your comment" required
+            minlength="9">
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <button id="commentButton" type="submit">Comment</button>
+      </form>
+
+    </div>
+
+    <div id="commentsContainer" class="body4">
+
     </div>
   </div>
+
 </body>
 
 </html>
+

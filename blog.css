@@ -35,7 +35,7 @@ body {
 
 .intro-pic img {
   width: 40%;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .firsttext,
@@ -284,6 +284,9 @@ body {
   cursor: pointer;
 
 }
+form button:hover{
+  transform: scale(1.2)
+}
 
 /* validating.......... */
 
@@ -423,3 +426,11 @@ input[name='names']:valid {
   margin-top: 36px;
   margin-left: 25px;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+.commentDate {
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 25px;
+ }

@@ -1,7 +1,22 @@
 function loading() {
-  fetch("http://localhost:7000/api/queries").then((res) => {
-    res.json().then(data => {
+  const Token = localStorage.getItem('Token');
 
+  fetch("https://personal-web-backend-318j.onrender.com/api/queries",{
+  headers: {
+    'Authorization': `Bearer ${Token}`,
+  }
+  }).then((res) => {
+    if (res.status === 401) {
+      const confMessage = document.getElementById('confirmationMessage');
+      const innerMessage = 'Unauthorized';
+      confMessage.innerText = innerMessage;
+      showConfirmationMessage();
+      setTimeout(() => {
+        window.location.href = '../login.html';
+      }, 2900);
+      return
+    }
+    res.json().then(data => {
 
       const queries = data.queries
       const messagesContainer = document.getElementById('messagesContainer')
@@ -54,20 +69,33 @@ function deleteQuery(queryId) {
   const cancelDeleteButton = document.getElementById('cancelDelete');
 
   confirmDeleteButton.addEventListener('click', () => {
-    fetch(`http://localhost:7000/api/queries/${queryId}`, {
-      method: 'DELETE'
-    })
-    .then(response => {
-      if (response.ok) {
-        console.log('Query deleted successfully');
-        showConfirmationMessage();
-      } else {
-        console.error('Failed to delete query');
+    fetch(`https://personal-web-backend-318j.onrender.com/api/queries/${queryId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${Token}`,
       }
     })
-    .catch(error => {
-      console.error('Error deleting query:', error);
-    });
+      .then(response => {
+        if (response.status === 401) {
+          const confMessage = document.getElementById('confirmationMessage');
+          const innerMessage = 'Unauthorized';
+          confMessage.innerText = innerMessage;
+          showConfirmationMessage();
+          setTimeout(() => {
+            window.location.href = '../login.html';
+          }, 2900);
+          return
+        }
+        if (response.ok) {
+          console.log('Query deleted successfully');
+          showConfirmationMessage();
+        } else {
+          console.error('Failed to delete query');
+        }
+      })
+      .catch(error => {
+        console.error('Error deleting query:', error);
+      });
 
     overlay.style.display = 'none';
     customDialog.style.display = 'none';
@@ -86,9 +114,11 @@ function showConfirmationMessage() {
     confirmationMessage.style.display = 'none';
     setTimeout(() => {
       window.location.reload();
-    }); 
-  }, 3000); 
+    });
+  }, 3000);
 }
 
 
 loading()
+
+const Token = localStorage.getItem('Token');

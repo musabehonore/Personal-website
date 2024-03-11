@@ -38,46 +38,30 @@
 
 
     <div class="comment2">
-      <form id="commentForm">
-        <div class="nameBox" >
-          <!-- <label> Names</label> -->
-          <input class="names" type="text" id="names" name="names" placeholder="Names" required minlength="4" >
+      <form id="commentForm" onsubmit="checkToken()">
+        <!-- <div class="nameBox" >
+          <input class="names" type="text" id="names" name="names" placeholder="Names"  minlength="4" >
           <span class="error" aria-live="polite"></span>
         </div>
         <div class="nameBox" >
-          <!-- <label> Email</label> -->
-          <input class="names" type="email" id="email2" name="names" placeholder="Email" required minlength="4" >
+          <input class="names" type="email" id="email2" name="names" placeholder="Email"  minlength="4" >
           <span class="error" aria-live="polite"></span>
-        </div>
+        </div> -->
         <div class="commentBox" >
-          <!-- <label > Your Comment</label> -->
           <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" placeholder="Your comment" required minlength="9" >
           <span class="error" aria-live="polite"></span>
         </div>
         
-        <button type="submit">Comment</button>        
+        <button id="commentButton" type="submit">Comment</button>        
       </form>
       
     </div>
     
     <div id="commentsContainer" class="body4">
-      <!-- <div class="comment1">
-        <p>
-          <img  src="Screenshot 2024-01-15 194356.png">
-          <span class="commentor">Pirlo <br/> </span> <br/> <span class="commenttext">That's A Great Documentation...</span> 
-          
-        </p>        
-      </div>
-      <div class="comment1">
-        <p>
-          <img  src="commentor2.jpg">
-          <span id="name" class="commentor">${comment.name}  <br/> </span> <br/> <span id="comment" class="commenttext">${comment.comment} </span> 
-          
-        </p>        
-      </div> -->
-      
+     
     </div>
   </div>
+  
 </body>
 
 </html>

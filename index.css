@@ -162,6 +162,8 @@ body {
 
 .login1 {
   color: white;
+
+  /* display: none; */
 }
 
 .login1 a {
@@ -172,6 +174,30 @@ body {
 .login12 {
   color: white;
   text-align: center;
+
+  /* display: none; */
+}
+#logout12{
+  color: red;
+  text-align: center;
+  background-color: transparent;
+  border: none;  
+  margin-right: 2vw;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100%;
+  display: none;
+}
+#logout1{
+  color: red;
+  text-align: center;
+  background-color: transparent;
+  border: none;  
+  margin-right: 2vw;
+  cursor: pointer;
+  width: 100%;
+  display: none;
+  
 }
 
 .login12 a {
@@ -226,7 +252,7 @@ body {
   }
 
   .navigation3 {
-    display: block;
+    display: none;
     gap: 20px;
 
   }
@@ -263,6 +289,10 @@ body {
   flex: 1;
   margin-left: 11%;
   margin-top: 15%;
+}
+
+.text1 a {
+  text-decoration: none;
 }
 
 .landing-image1 {
@@ -324,6 +354,7 @@ body {
   white-space: nowrap;
   margin-top: 8%;
   margin-bottom: 45%;
+  cursor: pointer;
 }
 
 .yello {
@@ -371,7 +402,7 @@ body {
   width: 85%;
   height: 422px;
   /* size: 70%; */
-  margin-top: 63%;
+  margin-top: 57%;
   margin-left: 6%;
   border-radius: 24px;
   border: 16px #EAB308 solid;
@@ -1420,7 +1451,7 @@ input[name='email']:valid {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /*         ::-webkit-scrollbar-thumb {
@@ -1435,5 +1466,3 @@ input[name='email']:valid {
     ::-webkit-scrollbar-track {
       background-color:#020617;
     } */
-
-  

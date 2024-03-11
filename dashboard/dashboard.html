@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
   <title>Dashboard</title>
 </head>
 
@@ -19,18 +20,20 @@
     </div>
     <div class="stats1">
       <p class="thestats"> <span class="the">The&nbsp;</span> <span class="stats2">Stats</span> </p>
+      <div id="confirmationMessage3" class="confirmation-message">Logged out successfully</div>
+
       <div class="boxes">
         <div class="box1">
-          <p class="numbers">49</p>
-          <p class="descriptions">Total visits today</p>
+          <p id="totalLikes1" class="numbers">0</p>
+          <p class="descriptions">Total likes</p>
         </div>
         <div class="box1">
-          <p class="numbers">10</p>
-          <p class="descriptions">Likes today</p>
+          <p id="totalComments1" class="numbers">0</p>
+          <p class="descriptions">Total comments</p>
         </div>
         <div class="box1">
-          <p class="numbers">6</p>
-          <p class="descriptions">Comments today</p>
+          <p id="totalBlogs1" class="numbers">0</p>
+          <p class="descriptions">Total Blogs</p>
         </div>
       </div>
     </div>
@@ -82,7 +85,13 @@
           <button>Customize </button>
         </div>
       </div>            
-    </div>    
+    </div> 
+    <div class="logoutContainer">
+      <button id="logoutButton">
+        <img src="logout.png" >
+        <p>Logout</p>
+      </button>
+    </div>   
   </div>
 </body>
 
