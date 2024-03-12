@@ -30,17 +30,17 @@
         <div id="confirmationMessage" class="confirmation-message">Blog deleted successfully!</div>
         <div id="customDialog" class="custom-dialog">
           <p>Are you sure you want to delete this Blog ??</p>
-         <div class="confirmButtons">
-          <button id="confirmDelete">Yes</button>
-          <button id="cancelDelete">No</button>
-         </div>      
+          <div class="confirmButtons">
+            <button id="confirmDelete">Yes</button>
+            <button id="cancelDelete">No</button>
+          </div>
         </div>
         <div class="overlay" id="overlay"></div>
 
         <div id="blogsContainer">
-        
+
         </div>
-        
+
 
         <div class="blog1container">
           <form id="blogForm" class="blogForm">
@@ -53,7 +53,7 @@
               <label for="image1">&#x21ea;<span> Image</span> </label>
             </div>
             <div id="contentLabel" class="inputs1">
-              <label >Content</label>
+              <label>Content</label>
             </div>
             <textarea id="richText" name="body" aria-required="true"></textarea>
             <button type="submit" id="createButton">Create</button>
@@ -109,6 +109,53 @@
 
         <!-- Include CKEditor 5 library -->
         <script src="https://cdn.ckeditor.com/ckeditor5/37.0.0/classic/ckeditor.js"></script>
+        <script>
+          
+          //Patching the blog (editing a blog)....
+
+          function handleEditButtonClick() {
+            let url = new URLSearchParams(window.location.search);
+            let id = url.get("id");
+
+            updateBlogForm(id);
+          }
+          console.log(id);
+
+          async function updateBlogForm(id) {
+            try {
+              let response = await fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${id}`);
+              let blog = await response.json();
+
+              document.getElementById('title').value = blog.title;
+
+              ClassicEditor
+                .create(document.querySelector('#editor'))
+                .then(editor => {
+                  editor.setData(blog.content);
+                })
+                .catch(error => {
+                  console.error('Error creating CKEditor:', error);
+                });
+
+              document.getElementById('blogForm').addEventListener('submit', function (event) {
+                handleUpdateFormSubmit(event, id);
+              });
+            } catch (err) {
+              console.log(err);
+            }
+          }
+
+          function handleUpdateFormSubmit(event, id) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const content = CKEditor.instances.editor.getData();
+            const image = document.getElementById('image').files[0];
+
+            updateBlog(id, title, image, content);
+          }
+
+        </script>
       </div>
     </div>
     <divs>

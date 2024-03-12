@@ -40,7 +40,7 @@ function loading() {
               </div>
             </div>
             <div id="icons1">
-              <button id="edit1" >
+              <button id="edit1" onclick="handleEditButtonClick()">
                 <img id="edit11" src="edit1.png">
               </button>
               <button id="delete1" onclick="deleteBlog('${blog._id}')">
@@ -118,7 +118,6 @@ function createBlog(title, image, content) {
         return
       }
 
-
       if (data.error === undefined) {
         showConfirmationMessage2();
         setTimeout(() => {
@@ -155,7 +154,16 @@ function showConfirmationMessage2() {
 
 document.getElementById('blogForm').addEventListener('submit', handleFormSubmit);
 
-//Patching the blog (editing a blog)....
+
+
+
+
+
+
+
+
+
+
 
 // // Function to handle click event on edit button
 // function handleEditButtonClick(blogId) {
@@ -244,27 +252,6 @@ document.getElementById('blogForm').addEventListener('submit', handleFormSubmit)
 //   handleEditButtonClick(blogId);
 // });
 
-// document.getElementById('createButton').addEventListener('click', () => {
-//   const title = document.getElementById('title1').value;
-//   const content = document.getElementById('richText').value;
-//   // const image = document.getElementById('image1').value;
-//   const blogId = document.getElementById('blogId').value;
-
-//   Copyfetch(`http://localhost:7000/api/blogs/${blogId}`, {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       title: title,
-//       content: content
-//     })
-//   }).then((res) => {
-//     console.log('Blog Updated');
-//   }).catch((err) => {
-//     console.log(err);
-//   });
-// });
 
 //deleting a blog
 
