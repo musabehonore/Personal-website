@@ -95,8 +95,19 @@ function createBlog(title, image, content) {
     .then(response => response.json())
     .then(data => {
       console.log('Blog post created successfully:', data);
+      
 
-      if (data.message === 'You are unauthenticated' || 'Unauthorized access') {
+      if (data.message === 'You are unauthenticated' ) {
+        const confMessage = document.getElementById('confirmationMessage2');
+        const innerMessage = 'Unauthorized';
+        confMessage.innerText = innerMessage;
+        showConfirmationMessage2();
+        setTimeout(() => {
+          window.location.href = '../login.html';
+        }, 2900);
+        return
+      }
+      if (data.message === 'Unauthorized access' ) {
         const confMessage = document.getElementById('confirmationMessage2');
         const innerMessage = 'Unauthorized';
         confMessage.innerText = innerMessage;
@@ -107,14 +118,21 @@ function createBlog(title, image, content) {
         return
       }
 
+
       if (data.error === undefined) {
         showConfirmationMessage2();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2900);
       } else {
         const confMessage = document.getElementById('confirmationMessage2');
         const innerMessage = data.error;
         confMessage.innerText = innerMessage;
       }
       showConfirmationMessage2();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2900);
     })
     .catch(error => {
       console.error('Error creating blog post:', error);
