@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const finalBlog = data.finalBlog;
         const blog = finalBlog.blog;
         document.getElementById('title1').textContent = blog.title;
-        document.getElementById('content1').textContent = blog.content;
+        document.getElementById('content1').innerHTML = blog.content;
         document.getElementById('image1').src = blog.image;
       })
       .catch((error) => {
