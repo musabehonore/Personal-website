@@ -32,13 +32,14 @@ function signUp(username, email, password) {
         localStorage.setItem('Token', token);
         showConfirmationMessage();
         setTimeout(() => {
-          window.location.href = '/index.html';
+          window.location.href = 'index.html';
         }, 3000)
       } else {
         const confMessage = document.getElementById('confirmationMessage');
         const innerMessage = data.message;
         confMessage.innerText = innerMessage;
         showConfirmationMessage();
+        return
       }
     })
     .catch(error => {
