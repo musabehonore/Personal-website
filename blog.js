@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // const blogId = '65e1e6d16d14c490fa496f6c';
   console.log(blogId)
 
+
   if (blogId) {
     fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}`)
 
@@ -76,6 +77,46 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     console.error('No blog ID provided in the URL');
   }
+
+   //like....
+   if (blogId) {
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/likes`).then((res) => {
+      res.json().then(data => {
+        console.log(data)
+
+
+        const likes = data.likes
+        const likesCount = document.getElementById('likesCount')
+
+        console.log(likes);
+
+        if (likes > 0) {
+          likesCount.innerHTML = likes
+        }
+
+      })
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+  //add a like
+  const likeButton = document.getElementById('likeButton');
+  likeButton.addEventListener('click', function () {
+
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/like`, {
+      method: 'POST'
+    })
+      .then(response => response.json())
+      .then(data => {
+        const updatedLikesCount = data.likes;
+        likesCount.textContent = updatedLikesCount;
+        console.log('Like added successfully:', data);
+      })
+      .catch(error => {
+        console.error('Error adding a like:', error);
+      });
+  });
+
   // comments loading
   if (blogId) {
     fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`).then((res) => {
@@ -104,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           for (let i = 0; i < commentDateElements.length; i++) {
             const commentDate = commentDateElements[i];
-            
+
             const commentDateInner = commentDate.innerHTML;
             const updatedDate = commentDateInner.substr(0, 17);
             commentDate.innerHTML = updatedDate;
@@ -130,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('commentForm').onsubmit = function () {
     return checkToken();
   };
+
 
   function checkToken() {
     const token = localStorage.getItem('Token');
@@ -209,47 +251,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 1000);
     }, 4000);
   }
+
   document.getElementById('commentForm').addEventListener('submit', handleFormSubmit);
-
-
-  //like....
-
-  if (blogId) {
-    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/likes`).then((res) => {
-      res.json().then(data => {
-
-
-        const likes = data.likes
-        const likesCount = document.getElementById('likesCount')
-
-        console.log(likes);
-
-        if (likes > 0) {
-          likesCount.innerHTML = likes
-        }
-
-      })
-    }).catch((err) => {
-      console.log(err)
-    })
-  }
-  //add a like
-  const likeButton = document.getElementById('likeButton');
-  likeButton.addEventListener('click', function () {
-
-    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/like`, {
-      method: 'POST'
-    })
-      .then(response => response.json())
-      .then(data => {
-        const updatedLikesCount = data.likes;
-        likesCount.textContent = updatedLikesCount;
-        console.log('Like added successfully:', data);
-      })
-      .catch(error => {
-        console.error('Error adding a like:', error);
-      });
-  });
 
 });
 
