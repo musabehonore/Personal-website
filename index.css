@@ -1269,6 +1269,7 @@ input[name='names']:valid {
 /* today................ */
 #blogsContainer {
   display: flex;
+  flex-direction: row;
   width: fit-content;
   overflow-x: hidden;
   padding: 20px;
@@ -1278,6 +1279,13 @@ input[name='names']:valid {
 #bContainer1 {
   overflow-x: hidden;
 }
+.loading{
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  }
 
 #blog1 {
   width: 300px;

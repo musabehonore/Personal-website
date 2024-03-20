@@ -1,76 +1,61 @@
-
 //fetch the blogs to the blog section
-function loading() {
-  fetch("https://personal-web-backend-318j.onrender.com/api/blogs/").then((res) => {
-    res.json().then(data => {
 
-      const blogs = data.blogs
-      const blogsContainer = document.getElementById('blogsContainer')
+// function loading() {
+//   fetch("https://personal-web-backend-318j.onrender.com/api/blogs/").then((res) => {
+//     res.json().then(data => {
 
-      console.log(blogs);
-      if (blogs.length > 0) {
-        blogs?.forEach(blog => {
-          blogsContainer.innerHTML +=
-            `
-          <div id="blog1">
-          <div id="image-container">
-            <img id="blogpic1" src="${blog.image}">
-          </div>
-          <p id="how">${blog.title}</p>
-          <div id="things">${blog.content}</div>
-          <p id="stats1"> <span id="date1">${blog.date}</span><span id="likes1">${blog.likes} Likes</span><span id="comments1">Comments</span></p>
-          <div id="learn1">
-            <p> <a href="blog.html?id=${blog._id}">Learn More</a> </p>
-            <img src="Frame.png">
-          </div>
-        </div>
-          `
-        });
-        autoSlide();
-      }
-      else {
-        const blogsContainer = document.getElementById('blogsContainer');
-        blogsContainer.innerHTML = ' <H1> No Blog found </H1> '
-      }
-    })
-  }).catch((err) => {
-    console.log(err)
-  })
-}
-loading()
+//       const blogs = data.blogs
+//       const blogsContainer = document.getElementById('blogsContainer')
+
+//       console.log(blogs);
+//       if (blogs.length > 0) {
+//         blogs?.forEach(blog => {
+//           blogsContainer.innerHTML +=
+//             `
+//           <div id="blog1">
+//           <div id="image-container">
+//             <img id="blogpic1" src="${blog.image}">
+//           </div>
+//           <p id="how">${blog.title}</p>
+//           <div id="things">${blog.content}</div>
+//           <p id="stats1"> <span id="date1">${blog.date}</span><span id="likes1">${blog.likes} Likes</span><span id="comments1">Comments</span></p>
+//           <div id="learn1">
+//             <p> <a href="blog.html?id=${blog._id}">Learn More</a> </p>
+//             <img src="Frame.png">
+//           </div>
+//         </div>
+//           `
+//         });
+//         autoSlide();
+//       }
+//       else {
+//         const blogsContainer = document.getElementById('blogsContainer');
+//         blogsContainer.innerHTML = ' <H1> No Blog found </H1> '
+//       }
+//     })
+//   }).catch((err) => {
+//     console.log(err)
+//   })
+// }
+// loading()
 
 
-//auto sliding
 
-function autoSlide() {
-  const blogsContainer = document.getElementById('blogsContainer');
-  let currentPosition = 0;
-  const blogWidth = blogsContainer.children[0].offsetWidth;
+// function autoSlide() {
+//   const blogsContainer = document.getElementById('blogsContainer');
+//   let currentPosition = 0;
+//   const blogWidth = blogsContainer.children[0].offsetWidth;
 
-  const slideInterval = setInterval(() => {
-    currentPosition += 1;
-    blogsContainer.style.transform = `translateX(-${currentPosition * (blogWidth + 20)}px)`;
-    if (currentPosition >= blogsContainer.children.length) {
-      currentPosition = 0;
-      blogsContainer.style.transform = `translateX(0)`;
-    }
-  }, 3000);
+//   const slideInterval = setInterval(() => {
+//     currentPosition += 1;
+//     blogsContainer.style.transform = `translateX(-${currentPosition * (blogWidth + 20)}px)`;
+//     if (currentPosition >= blogsContainer.children.length) {
+//       currentPosition = 0;
+//       blogsContainer.style.transform = `translateX(0)`;
+//     }
+//   }, 3000);
 
-  // blogsContainer.addEventListener('mouseenter', () => {
-  //   clearInterval(slideInterval);
-  // });
-
-  // blogsContainer.addEventListener('mouseleave', () => {
-  //   slideInterval = setInterval(() => {
-  //     currentPosition += 1; 
-  //     blogsContainer.style.transform = `translateX(-${currentPosition * (blogWidth + 20)}px)`; // Adjust 20 for margin between blogs
-  //     if (currentPosition >= blogsContainer.children.length) {
-  //       currentPosition = 0;
-  //       blogsContainer.style.transform = `translateX(0)`;
-  //     }
-  //   }, 4000); 
-  // });
-}
+// }
 
 
 //sending a query
@@ -130,7 +115,7 @@ function showConfirmationMessage3() {
 document.getElementById('message1').addEventListener('submit', handleFormSubmit);
 
 //logout...... logging out.....
-document.getElementById('logout12').addEventListener('click', function() {
+document.getElementById('logout12').addEventListener('click', function () {
   localStorage.removeItem('Token');
   localStorage.removeItem('isLoggedIn');
   showConfirmationMessage3();
@@ -138,7 +123,7 @@ document.getElementById('logout12').addEventListener('click', function() {
     window.location.reload();
   }, 3000);
 });
-document.getElementById('logout1').addEventListener('click', function() {
+document.getElementById('logout1').addEventListener('click', function () {
   localStorage.removeItem('Token');
   localStorage.removeItem('isLoggedIn');
   showConfirmationMessage3();
@@ -154,7 +139,7 @@ if (isLoggedIn === 'true') {
   const loginButton2 = document.getElementById('login12');
   const logoutButton = document.getElementById('logout1');
   const logoutButton2 = document.getElementById('logout12');
-   
+
   loginButton.style.display = 'none';
   loginButton2.style.display = 'none';
   logoutButton.style.display = 'block';

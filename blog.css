@@ -425,7 +425,8 @@ input[name='names']:valid {
   color: rgb(79, 190, 79);
   position: absolute;
   margin-top: 36px;
-  margin-left: 25px;
+  margin-left: 25px; 
+  font-weight: bold;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -434,4 +435,13 @@ input[name='names']:valid {
   font-size: 14px;
   font-weight: normal;
   margin-left: 25px;
+ }
+ .loading{
+  display: flex;
+  color: gray;
+  font-weight: bold;
+  background-color: #111827;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
  }

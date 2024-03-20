@@ -17,53 +17,56 @@
       <a href="index.html#myblogs"><img
           src="transparent-back-icon-business-seo-icon-previous-icon-5da1b0537ebaa1.3806857215708775235191.png"></a>
     </div>
-    <p class="how5" id="title1">
 
-    </p>
-    <div class="intro-pic">
-      <img id="image1" >
-    </div>
-    <div class="body1" id="content1">
-       
-    </div>
-    <div class="body2">
+    <!-- react rendered -->
+    <div id="theBlog"></div>
+
+    <!-- <div>
+      <p class="how5" id="title1"> </p>
+      <div class="intro-pic">
+        <img id="image1">
+      </div>
+      <div class="body1" id="content1"> </div>
+    </div> -->
+
+
+    <div class="body2" id="likesContainer">
       <button id="likeButton" class="like">
-        <div id="likesCount" >0</div>
-        <img src="likeIcon.png" >
+        <div id="likesCount">0</div>
+        <img src="likeIcon.png">
       </button>
     </div>
     <div class="body3">
       <p>Comments</p>
     </div>
 
-    <div id="confirmationMessage" class="confirmation-message">Comment posted successfully!</div>
 
+    <div class="comment2" id="commentForm">
 
-    <div class="comment2">
-      <form id="commentForm" onsubmit="checkToken()">
-        <!-- <div class="nameBox" >
-          <input class="names" type="text" id="names" name="names" placeholder="Names"  minlength="4" >
+      <!-- <form id="commentForm" onsubmit="checkToken()">
+        <div class="commentBox">
+          <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" placeholder="Your comment" required
+            minlength="9">
           <span class="error" aria-live="polite"></span>
         </div>
-        <div class="nameBox" >
-          <input class="names" type="email" id="email2" name="names" placeholder="Email"  minlength="4" >
-          <span class="error" aria-live="polite"></span>
-        </div> -->
-        <div class="commentBox" >
-          <input class="yourcomment" type="text" id="yourcomment" name="yourcomment" placeholder="Your comment" required minlength="9" >
-          <span class="error" aria-live="polite"></span>
-        </div>
-        
-        <button id="commentButton" type="submit">Comment</button>        
-      </form>
-      
+
+        <button id="commentButton" type="submit">Comment</button>
+      </form> -->
+
     </div>
-    
+
+    <!-- <div id="kabayeTesting"></div> -->
+
     <div id="commentsContainer" class="body4">
-     
     </div>
+
   </div>
-  
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script src="/React (Redux)/SingleBlog/blog.js" type="text/babel"></script>
+
 </body>
 
 </html>
