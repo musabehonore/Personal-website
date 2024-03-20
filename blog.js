@@ -60,53 +60,53 @@ document.addEventListener('DOMContentLoaded', function () {
   // const blogId = '65e1e6d16d14c490fa496f6c';
   console.log(blogId)
 
-  // if (blogId) {
-  //   fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}`)
+  if (blogId) {
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}`)
 
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error('Failed to fetch blog post');
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data)
-  //       const finalBlog = data.finalBlog;
-  //       const blog = finalBlog.blog;
-  //       document.getElementById('title1').textContent = blog.title;
-  //       document.getElementById('content1').innerHTML = blog.content;
-  //       document.getElementById('image1').src = blog.image;
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching blog post:', error);
-  //     });
-  // } else {
-  //   console.error('No blog ID provided in the URL');
-  // }
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Failed to fetch blog post');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data)
+        const finalBlog = data.finalBlog;
+        const blog = finalBlog.blog;
+        document.getElementById('title1').textContent = blog.title;
+        document.getElementById('content1').innerHTML = blog.content;
+        document.getElementById('image1').src = blog.image;
+      })
+      .catch((error) => {
+        console.error('Error fetching blog post:', error);
+      });
+  } else {
+    console.error('No blog ID provided in the URL');
+  }
 
 
    //like....
    
-  //  if (blogId) {
-  //   fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/likes`).then((res) => {
-  //     res.json().then(data => {
-  //       console.log(data)
+   if (blogId) {
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/likes`).then((res) => {
+      res.json().then(data => {
+        console.log(data)
 
 
-  //       const likes = data.likes
-  //       const likesCount = document.getElementById('likesCount')
+        const likes = data.likes
+        const likesCount = document.getElementById('likesCount')
 
-  //       console.log(likes);
+        console.log(likes);
 
-  //       if (likes > 0) {
-  //         likesCount.innerHTML = likes
-  //       }
+        if (likes > 0) {
+          likesCount.innerHTML = likes
+        }
 
-  //     })
-  //   }).catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
+      })
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
   
   //add a like
   const likeButton = document.getElementById('likeButton');
@@ -128,139 +128,139 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // comments loading
 
-  // if (blogId) {
-  //   fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`).then((res) => {
-  //     res.json().then(data => {
+  if (blogId) {
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`).then((res) => {
+      res.json().then(data => {
 
 
-  //       const comments = data.data
-  //       const commentsContainer = document.getElementById('commentsContainer')
+        const comments = data.data
+        const commentsContainer = document.getElementById('commentsContainer')
 
-  //       console.log(comments);
-  //       if (comments.length > 0) {
-  //         comments?.forEach(comment => {
-  //           commentsContainer.innerHTML +=
-  //             `
-  //           <div class="comment1">
-  //           <p>
-  //             <img  src="commentor2.jpg">
-  //             <span id="name" class="commentor">${comment.name}  <span id="commentDate" class="commentDate"> ${comment.date}</span>  <br/> </span> <br/> <span id="comment" class="commenttext">${comment.comment} </span> 
+        console.log(comments);
+        if (comments.length > 0) {
+          comments?.forEach(comment => {
+            commentsContainer.innerHTML +=
+              `
+            <div class="comment1">
+            <p>
+              <img  src="commentor2.jpg">
+              <span id="name" class="commentor">${comment.name}  <span id="commentDate" class="commentDate"> ${comment.date}</span>  <br/> </span> <br/> <span id="comment" class="commenttext">${comment.comment} </span> 
               
-  //           </p>        
-  //         </div>
-  //           `
-  //         });
+            </p>        
+          </div>
+            `
+          });
 
-  //         const commentDateElements = document.getElementsByClassName('commentDate');
+          const commentDateElements = document.getElementsByClassName('commentDate');
 
-  //         for (let i = 0; i < commentDateElements.length; i++) {
-  //           const commentDate = commentDateElements[i];
+          for (let i = 0; i < commentDateElements.length; i++) {
+            const commentDate = commentDateElements[i];
 
-  //           const commentDateInner = commentDate.innerHTML;
-  //           const updatedDate = commentDateInner.substr(0, 17);
-  //           commentDate.innerHTML = updatedDate;
-  //         }
+            const commentDateInner = commentDate.innerHTML;
+            const updatedDate = commentDateInner.substr(0, 17);
+            commentDate.innerHTML = updatedDate;
+          }
 
-  //         // autoSlide();
-  //       }
-  //       else {
-  //         const commentsContainer = document.getElementById('commentsContainer');
-  //         commentsContainer.innerHTML = `
-  //         <p class='noComments' >No comments yet</p>
-  //         <p class='noComments2' >Be the first to comment...</p> `
-  //       }
-  //     })
-  //   }).catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
+          // autoSlide();
+        }
+        else {
+          const commentsContainer = document.getElementById('commentsContainer');
+          commentsContainer.innerHTML = `
+          <p class='noComments' >No comments yet</p>
+          <p class='noComments2' >Be the first to comment...</p> `
+        }
+      })
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
 
 
   //post a comment
-  // document.getElementById('commentForm').onsubmit = function () {
-  //   return checkToken();
-  // };
+  document.getElementById('commentForm').onsubmit = function () {
+    return checkToken();
+  };
 
 
-  // function checkToken() {
-  //   const token = localStorage.getItem('Token');
+  function checkToken() {
+    const token = localStorage.getItem('Token');
 
-  //   if (!token) {
-  //     console.log('No token found! Please log in.');
-  //     event.preventDefault();
-  //     const confMessage = document.getElementById('confirmationMessage');
-  //     const innerMessage = 'Unauthenticated!  Please first Login';
-  //     confMessage.innerText = innerMessage;
-  //     showConfirmationMessage();
-  //     setTimeout(() => {
-  //       window.location.href = 'login.html';
-  //     }, 3900);
-  //     return false;
-  //   }
+    if (!token) {
+      console.log('No token found! Please log in.');
+      event.preventDefault();
+      const confMessage = document.getElementById('confirmationMessage');
+      const innerMessage = 'Unauthenticated!  Please first Login';
+      confMessage.innerText = innerMessage;
+      showConfirmationMessage();
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 3900);
+      return false;
+    }
 
-  //   return true;
-  // }
+    return true;
+  }
 
-  // const token = localStorage.getItem('Token');
-  // function getTokenRole(token) {
-  //   const decodedToken = atob(token.split('.')[1]);
-  //   const parsedToken = JSON.parse(decodedToken);
+  const token = localStorage.getItem('Token');
+  function getTokenRole(token) {
+    const decodedToken = atob(token.split('.')[1]);
+    const parsedToken = JSON.parse(decodedToken);
 
-  //   return parsedToken;
-  // }
-  // const User = getTokenRole(token);
-  // const name1 = User.username;
-  // const email1 = User.email;
-  // console.log(User)
+    return parsedToken;
+  }
+  const User = getTokenRole(token);
+  const name1 = User.username;
+  const email1 = User.email;
+  console.log(User)
 
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
+  function handleFormSubmit(event) {
+    event.preventDefault();
 
-  //   const name = name1;
-  //   const email = email1;
-  //   const yourcomment = document.getElementById('yourcomment').value;
+    const name = name1;
+    const email = email1;
+    const yourcomment = document.getElementById('yourcomment').value;
 
-  //   postComment(name, email, yourcomment);
-  // }
+    postComment(name, email, yourcomment);
+  }
 
 
-  // function postComment(name, email, yourcomment) {
-  //   const formData = new FormData();
-  //   formData.append('name', name);
-  //   formData.append('email', email);
-  //   formData.append('comment', yourcomment);
+  function postComment(name, email, yourcomment) {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('comment', yourcomment);
 
-  //   const Token = localStorage.getItem('Token');
-  //   fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Authorization': `Bearer ${Token}`,
-  //     },
-  //     body: formData
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log('Comment posted successfully:', data);
+    const Token = localStorage.getItem('Token');
+    fetch(`https://personal-web-backend-318j.onrender.com/api/blogs/${blogId}/comments`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${Token}`,
+      },
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Comment posted successfully:', data);
 
-  //       showConfirmationMessage();
-  //       // document.getElementById('yourcomment').reset();
-  //     })
-  //     .catch(error => {
-  //       console.error('Error posting a comment:', error);
-  //     });
-  // }
+        showConfirmationMessage();
+        // document.getElementById('yourcomment').reset();
+      })
+      .catch(error => {
+        console.error('Error posting a comment:', error);
+      });
+  }
 
-  // function showConfirmationMessage() {
-  //   const confirmationMessage = document.getElementById('confirmationMessage');
-  //   confirmationMessage.style.display = 'flex';
-  //   setTimeout(() => {
-  //     confirmationMessage.style.display = 'none';
-  //     setTimeout(() => {
-  //       window.location.reload();
-  //     }, 1000);
-  //   }, 4000);
-  // }
+  function showConfirmationMessage() {
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    confirmationMessage.style.display = 'flex';
+    setTimeout(() => {
+      confirmationMessage.style.display = 'none';
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }, 4000);
+  }
 
-  // document.getElementById('commentForm').addEventListener('submit', handleFormSubmit);
+  document.getElementById('commentForm').addEventListener('submit', handleFormSubmit);
 
 });
