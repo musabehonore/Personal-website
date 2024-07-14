@@ -2,28 +2,35 @@
   font-family: lexend deca;
   src: url(LexendDeca-VariableFont_wght.ttf);
 }
+
 * {
   font-family: lexend deca;
   transition: 0.5s;
   scroll-behavior: smooth;
 }
-body{
-  background-color:#020617;
- 
+
+body {
+  background-color: #020617;
+
 }
-.container2{
-padding-bottom: 70px;
+
+.container2 {
+  padding-bottom: 70px;
+  position: relative;
 }
-.my1{
+
+.my1 {
   color: #F3F4F6;
   font-size: 42px;
   font-weight: 700;
 }
-.dash{
+
+.dash {
   color: #EAB308;
   font-size: 42px;
   font-weight: 700;
 }
+
 .title1 {
   display: flex;
   justify-content: center;
@@ -31,24 +38,27 @@ padding-bottom: 70px;
   background-color: #020617;
   position: relative;
 }
-.admin1{
+
+.admin1 {
   position: absolute;
   display: flex;
   margin-left: 60%;
   margin-top: -10px;
 
 }
-.admin1 p{
+
+.admin1 p {
   color: #9CA3AF;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
-.admin1 img{
+
+.admin1 img {
   width: 50px;
-  border-radius: 50px;  
+  border-radius: 50px;
 }
-.stats1{
+
+.stats1 {
   display: flex;
   justify-content: center;
   background-color: #111827;
@@ -56,31 +66,36 @@ padding-bottom: 70px;
   margin-right: 10%;
   border-radius: 14px;
   flex-direction: column;
-  padding-bottom: 2%;  
-  }
-.thestats{
-  display: flex;
-  justify-content: center;  
-  background-color: #111827;
-  
+  padding-bottom: 2%;
 }
-.the{
+
+.thestats {
+  display: flex;
+  justify-content: center;
+  background-color: #111827;
+
+}
+
+.the {
   color: #F3F4F6;
   font-size: 34px;
   font-weight: 700;
 }
-.stats2{
+
+.stats2 {
   color: #EAB308;
   font-size: 34px;
   font-weight: 700;
 }
-.boxes{
+
+.boxes {
   display: flex;
   justify-content: space-between;
   margin-left: 4%;
-  margin-right: 4%;  
+  margin-right: 4%;
 }
-.box1{
+
+.box1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,104 +104,118 @@ padding-bottom: 70px;
   width: 30%;
   border-radius: 16px;
 }
-.box1 p{
+
+.box1 p {
   padding-left: 6%;
   padding-right: 6%;
 }
-.numbers{
+
+.numbers {
   color: #EAB308;
   font-size: 42px;
   font-weight: 700;
-  /* margin-bottom: 4%;
-  margin-top: 2%; */
 }
-.descriptions{
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+
+.descriptions {
   color: white;
   font-size: 22px;
-  /* white-space: nowrap; */
-  
+
 }
-.boxes2{
+
+.boxes2 {
   display: flex;
   gap: 10%;
   margin-top: 5%;
   margin-left: 10%;
-  margin-right: 10%; 
+  margin-right: 10%;
 }
-.theblogs{
+
+.theblogs {
   background-color: #111827;
   width: 46%;
   border-radius: 14px;
-  
+
 }
-.blogs4{
+
+.blogs4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
 }
-.blogs4 p{
+
+.blogs4 p {
   color: white;
   font-size: 22px;
   font-weight: 700;
   gap: 2px;
 }
-.customize{
+
+.customize {
   display: flex;
   justify-content: center;
   padding: 7%;
 }
-.customize button{
+
+.customize button {
   background-color: #EAB308;
   border-radius: 6px;
   font-size: 16px;
   padding: 2%;
   border: none;
   text-align: right;
-  }
-.boxes3{
+}
+
+.boxes3 {
   display: flex;
   gap: 10%;
   margin-top: 5%;
   margin-left: 10%;
-  margin-right: 10%; 
-  
+  margin-right: 10%;
+
 }
-.customize button a{
+
+.customize button a {
   text-decoration: none;
   color: black;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
-.logoutContainer{
+
+.logoutContainer {
   display: flex;
   background-color: #020617;
   justify-content: center;
   padding-top: 40px;
 }
-#logoutButton{
-width: 120px;
-display: flex;
-background-color: #020617;
-border: none;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+
+#logoutButton {
+  width: 120px;
+  display: flex;
+  background-color: #020617;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-#logoutButton img{
+
+#logoutButton img {
   width: 50%;
 }
-#logoutButton p{
+
+#logoutButton p {
   color: red;
   font-weight: bold;
 }
-button:hover{
+
+button:hover {
   transform: scale(1.2)
 }
+
 .confirmation-message {
   background-color: rgb(1, 95, 1);
   width: 250px;
@@ -196,7 +225,6 @@ button:hover{
   margin-bottom: 20px;
   border-radius: 5px;
   display: none;
-  /* display: flex; */
   justify-content: center;
   white-space: nowrap;
   animation: scaleIn 0.3s ease-in-out;
@@ -208,4 +236,71 @@ button:hover{
 
 }
 
+.about1 {
+  display: flex;
+  flex: 2;
+  margin-left: 11%;
+  position: absolute;
+  z-index: 10;
+}
 
+.Hspan {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.Mspan {
+  font-size: 16px;
+  font-weight: 700;
+  color: #EAB308;
+}
+
+.Mspan a {
+  color: #EAB308;
+  text-decoration: none;
+}
+
+@media(max-width: 650px) {
+  .boxes2 {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .theblogs {
+    width: 100%;
+  }
+
+  .boxes {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .box1 {
+    width: 100%;
+  }
+
+  .numbers {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+
+  .my1 {
+    font-size: 30px;
+  }
+
+  .dash {
+    font-size: 30px;
+  }
+
+  .admin1 p {
+    font-size: 12px;
+  }
+
+  .admin1 img {
+    width: 38px;
+    border-radius: 50px;
+  }
+}

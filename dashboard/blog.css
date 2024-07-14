@@ -71,7 +71,7 @@ body {
   border-radius: 15px;
 }
 
-.body1{
+.body1 {
   padding-bottom: 10px;
   padding-top: 10px;
 
@@ -295,24 +295,28 @@ form button:hover {
 
 /* validating.......... */
 
-input[name='names']:invalid {
+input[name='names']:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-input[name='names']:valid {
+input[name='names']:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
 }
 
-#yourcomment:invalid {
+#yourcomment:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-#yourcomment:valid {
+#yourcomment:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
+}
+
+#yourcomment::placeholder {
+  padding-left: 28px;
 }
 
 .error {

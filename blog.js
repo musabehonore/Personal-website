@@ -1,18 +1,6 @@
 const form = document.querySelector("form");
-// const names = document.getElementById("names");
 const message = document.getElementById("yourcomment");
-// const namesError = document.querySelector("#names + span.error");
 const messageError = document.querySelector("#yourcomment + span.error");
-
-// names.addEventListener("input", () => {
-//   if (names.validity.valid) {
-//     namesError.textContent = "";
-//     namesError.className = "error";
-//   } else {
-//     showNameError();
-//   }
-// });
-
 
 
 message.addEventListener("input", () => {
@@ -35,15 +23,6 @@ form.addEventListener("submit", (event) => {
 });
 
 
-
-// function showNameError() {
-//   if (names.validity.valueMissing) {
-//     namesError.textContent = "Your name is needed";
-//   } else if (names.validity.tooShort) {
-//     namesError.textContent = `A name should be at least ${names.minLength} characters... you entered ${names.value.length}`;
-//   }
-// }
-
 function showMessageError() {
   if (message.validity.valueMissing) {
     messageError.textContent = "Your comment is needed";
@@ -57,7 +36,6 @@ function showMessageError() {
 document.addEventListener('DOMContentLoaded', function () {
   const urlParams = new URLSearchParams(window.location.search);
   const blogId = urlParams.get('id');
-  // const blogId = '65e1e6d16d14c490fa496f6c';
   console.log(blogId)
 
   if (blogId) {
@@ -243,7 +221,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Comment posted successfully:', data);
 
         showConfirmationMessage();
-        // document.getElementById('yourcomment').reset();
       })
       .catch(error => {
         console.error('Error posting a comment:', error);

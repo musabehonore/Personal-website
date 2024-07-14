@@ -49,7 +49,7 @@ body {
   color: white;
   background-color: #111827;
   margin: 0%;
-  
+
 }
 
 .pic2,
@@ -70,11 +70,13 @@ body {
   width: 56%;
   border-radius: 15px;
 }
-.body1{
+
+.body1 {
   padding-bottom: 10px;
   padding-top: 10px;
 
 }
+
 .body2 {
   background-color: #111827;
 }
@@ -85,12 +87,8 @@ body {
   display: flex;
   justify-content: center;
   background-color: #111827;
-  /* padding-left: 30%; */
   padding-bottom: 2%;
   padding-top: 12px;
-  
-
-
 }
 
 .body3 p {
@@ -99,11 +97,11 @@ body {
   align-items: center;
   background-color: #9CA3AF;
   color: #F3F4F6;
-  width: 16%;
+  width: 13%;
   height: 50px;
   margin: 0%;
-  border-radius: 20px;
-  font-size: 26px;
+  border-radius: 4px;
+  font-size: 24px;
 }
 
 .ahaa {
@@ -250,7 +248,8 @@ body {
   margin-bottom: 3%;
   border-radius: 10px;
 }
-.body4{
+
+.body4 {
   gap: 45px;
 }
 
@@ -285,30 +284,35 @@ body {
   cursor: pointer;
 
 }
-form button:hover{
+
+form button:hover {
   transform: scale(1.2)
 }
 
 /* validating.......... */
 
-input[name='names']:invalid {
+input[name='names']:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-input[name='names']:valid {
+input[name='names']:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
 }
 
-#yourcomment:invalid {
+#yourcomment:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-#yourcomment:valid {
+#yourcomment:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
+}
+
+#yourcomment::placeholder {
+  padding-left: 28px;
 }
 
 .error {
@@ -425,18 +429,21 @@ input[name='names']:valid {
   color: rgb(79, 190, 79);
   position: absolute;
   margin-top: 36px;
-  margin-left: 25px; 
+  margin-left: 25px;
   font-weight: bold;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 .commentDate {
   font-size: 14px;
   font-weight: normal;
   margin-left: 25px;
- }
- .loading{
+}
+
+.loading {
   display: flex;
   color: gray;
   font-weight: bold;
@@ -444,4 +451,4 @@ input[name='names']:valid {
   height: 300px;
   justify-content: center;
   align-items: center;
- }
+}

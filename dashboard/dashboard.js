@@ -46,6 +46,12 @@ fetch("https://personal-web-backend-318j.onrender.com/api/blogs/")
           });
         });
 
+    const blog1 = document.getElementById('blog1');
+    blog1.textContent = blogs[0].title;
+    const blog2 = document.getElementById('blog2');
+    blog2.textContent = blogs[1].title;
+    const blog3 = document.getElementById('blog3');
+    blog3.textContent = blogs[2].title;
 
     });
     const totalLikes1 = document.getElementById('totalLikes1');

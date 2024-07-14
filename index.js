@@ -46,10 +46,10 @@ function autoSlide() {
   let currentPosition = 0;
   const blogWidth = blogsContainer.children[0].offsetWidth;
 
-  const slideInterval = setInterval(() => {
-    currentPosition += 1;
+  setInterval(() => {
+    currentPosition += 2;
     blogsContainer.style.transform = `translateX(-${currentPosition * (blogWidth + 20)}px)`;
-    if (currentPosition >= blogsContainer.children.length) {
+    if (currentPosition >= blogsContainer.children.length - 2) {
       currentPosition = 0;
       blogsContainer.style.transform = `translateX(0)`;
     }

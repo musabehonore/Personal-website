@@ -177,27 +177,29 @@ body {
 
   /* display: none; */
 }
-#logout12{
+
+#logout12 {
   color: red;
   text-align: center;
   background-color: transparent;
-  border: none;  
+  border: none;
   margin-right: 2vw;
   margin-bottom: 10px;
   cursor: pointer;
   width: 100%;
   display: none;
 }
-#logout1{
+
+#logout1 {
   color: red;
   text-align: center;
   background-color: transparent;
-  border: none;  
+  border: none;
   margin-right: 2vw;
   cursor: pointer;
   width: 100%;
   display: none;
-  
+
 }
 
 .login12 a {
@@ -445,8 +447,6 @@ body {
 }
 
 .text-about {
-  /* margin-top: 0%; */
-  /* display: flex; */
   padding: 6%;
   margin-bottom: 10%;
   margin-top: 14%;
@@ -576,8 +576,6 @@ body {
 }
 
 .folio1 {
-  /* display: flex;
-  flex-direction: column; */
   background-color: #D9D9D9;
   border-radius: 22px;
   width: 44%;
@@ -1099,24 +1097,43 @@ body {
   color: white;
 }
 
+.email1 {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 70%;
+  height: 100px;
+  align-items: center;
+  position: relative;
+
+}
+
+.email1 input {
+  width: 100%;
+  height: 100%;
+  background-color: #020617;
+  border: none;
+  color: white;
+}
+
 /*......... valids ......................*/
 /* .......permanent valids...... */
-input[name='names']:invalid {
+input[name='names']:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-input[name='names']:valid {
+input[name='names']:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
 }
 
-#message:invalid {
+#message:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-#message:valid {
+#message:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
 }
@@ -1140,7 +1157,6 @@ input[name='names']:valid {
 
 .message2 {
   display: flex;
-  /* background-color: #020617; */
   color: white;
 }
 
@@ -1163,18 +1179,26 @@ input[name='names']:valid {
   background-color: #EAB308;
   border-radius: 4px;
   font-size: 16px;
-
   width: 22%;
   height: 20%;
   border: none;
   text-align: center;
   cursor: pointer;
+  justify-content: center;
+}
+
+.contactbutton:hover {
+  transform: scale(1.2)
 }
 
 .socialmedia {
   display: flex;
   justify-content: center;
   gap: 1%;
+}
+
+.socialmedia img {
+  width: 30px;
 }
 
 .admin {
@@ -1211,6 +1235,12 @@ input[name='names']:valid {
   }
 
   .name1 {
+    height: 30px;
+    padding: 1%;
+    margin-bottom: 3%;
+  }
+
+  .email1 {
     height: 30px;
     padding: 1%;
     margin-bottom: 3%;
@@ -1279,13 +1309,14 @@ input[name='names']:valid {
 #bContainer1 {
   overflow-x: hidden;
 }
-.loading{
+
+.loading {
   color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  }
+}
 
 #blog1 {
   width: 300px;
@@ -1396,33 +1427,12 @@ input[name='names']:valid {
   background-color: transparent;
 }
 
-.email1 {
-  display: flex;
-  flex-direction: column;
-  /* background-color: #020617; */
-  color: white;
-  /* width: 410%; */
-  width: 70%;
-  height: 100px;
-  align-items: center;
-  position: relative;
-
-}
-
-.email1 input {
-  width: 100%;
-  height: 100%;
-  background-color: #020617;
-  border: none;
-  color: white;
-}
-
-input[name='email']:invalid {
+input[name='email']:invalid:not(:placeholder-shown) {
   border: 1px solid red;
   border-radius: 5px;
 }
 
-input[name='email']:valid {
+input[name='email']:valid:not(:placeholder-shown) {
   border: 2px solid green;
   border-radius: 5px;
 }
